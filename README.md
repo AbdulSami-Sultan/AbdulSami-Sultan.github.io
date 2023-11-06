@@ -1,5 +1,5 @@
-# **Ganesh Raju Galla**
-<img align="right" src="Portrait/Abdul_Sami_Sultan.png"/>  
+# **Abdul Sami Sultan**
+<img align="right" src="Portrait/Abdul_Sami_Sultan.png" width="300"  height="300"/>  
 
 ### **iOS Developer**
 Karachi, Pakistan (PST+5)
