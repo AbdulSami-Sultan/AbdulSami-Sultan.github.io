@@ -2,7 +2,7 @@
 
 ## Introduction
 
-<img align="right" src="Portrait/Abdul_Sami_Sultan.png" width="300"  height="300"/>  
+<img align="right" src="Portrait/Abdul_Sami_Sultan.jpeg" width="300"  height="300"/>  
 
 <h3 align="center">Hey there, I'm <a href="https://github.com/AbdulSami-Sultan">Abdul Sami Sultan</a></h3>
 
