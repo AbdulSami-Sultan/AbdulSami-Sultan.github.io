@@ -59,7 +59,8 @@ filters.addEventListener("click", (event) => {
 
 function expandProject(id) {
     const project = document.getElementById(id);
-    const details = project?.querySelector("details");
+    if (!project?.classList.contains("case-card")) return;
+    const details = project.querySelector("details");
     if (!details) return;
     if (project.hidden) filterProjects("all");
     details.open = true;

@@ -104,14 +104,9 @@ details[open] > .catalog-row::after { content: "−"; }
 .project-gallery-nav { display: flex; flex-wrap: wrap; gap: .55rem; margin-block: 1.15rem 2rem; }
 .project-gallery-nav a { padding: .4rem .75rem; border: 1px solid var(--line); border-radius: 999px; background: var(--white); font-size: .875rem; text-decoration: none; }
 .project-gallery-nav a:hover { border-color: var(--blue); color: var(--blue); }
-.project-gallery { padding-block: 1.25rem 1.5rem; border-top: 1px solid var(--line); }
-.gallery-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .5rem 1rem; margin-bottom: .85rem; }
-.gallery-heading h3 { font-size: 1.35rem; font-weight: 600; }
-.screen-grid { display: grid; grid-auto-flow: column; grid-auto-columns: clamp(8rem, 19vw, 11rem); gap: .65rem; overflow-x: auto; padding: .3rem .3rem .65rem; scroll-snap-type: x proximity; }
-.screen-grid figure { background: var(--white); border: 1px solid var(--line); border-radius: .8rem; text-align: center; padding: .55rem; scroll-snap-align: start; }
-.screen-grid a { display: block; border-radius: .4rem; }
-.screen-grid img { width: 100%; aspect-ratio: 9 / 19.5; object-fit: contain; }
-.screen-grid figcaption { margin-top: .45rem; color: var(--muted); font-size: .8rem; }
+.project-gallery-grid { row-gap: 2rem; }
+.gallery-more summary { cursor: pointer; font-size: .875rem; font-weight: 600; }
+.gallery-more .feature-screens { margin-top: .75rem; row-gap: .85rem; }
 .project-img { max-height: 15rem; border-radius: .75rem; }
 
 .about-copy { display: flow-root; color: var(--muted); }
