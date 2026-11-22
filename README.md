@@ -147,3 +147,17 @@ I'm always happy to chat about iOS development, architecture patterns, VPN tech,
 Copy `.env.example` to `.env` and fill in the values from the Firebase web app config. Run `node generate-firebase-config.mjs` with Node.js 22 or newer after changing the values.
 
 Include `firebase-config.generated.js` in the published site files to enable Analytics. Keep `.env` outside the published files. The generated module is public browser configuration and should contain only Firebase web app settings. Both files are ignored by Git. GitHub Pages deployments from a branch need a build or upload step to include the generated module.
+
+The portfolio also includes a Google Tag Manager container. If Firebase Analytics is unavailable, the site puts the custom events on the Tag Manager data layer. In Tag Manager, configure a Custom Event trigger and a GA4 Event tag to forward each event you want to collect.
+
+| Event | When it fires |
+|---|---|
+| `section_tap` | An in-page link is activated |
+| `resume_download` | The public résumé download link is activated |
+| `photo_view` | A project screenshot or career photo is opened |
+| `contact_section_view`, `experience_view`, `catalog_view` | The corresponding section heading comes into view |
+| `career_highlights_view` | The career highlights heading comes into view |
+| `testimonial_view` | A heading inside a future `#testimonials` section comes into view |
+| `medium_section_view`, `medium_open` | The writing section is seen, or a link to Medium is activated |
+
+Section views are logged once per page load. Medium reads are measured on Medium itself.

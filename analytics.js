@@ -1,37 +1,89 @@
-async function initializePortfolioAnalytics() {
+async function createFirebaseReporter() {
     const { default: firebaseConfig } = await import("./firebase-config.generated.js").catch(() => ({}));
-    if (!firebaseConfig) return;
+    if (!firebaseConfig) return null;
 
     const requiredFields = ["apiKey", "projectId", "appId", "measurementId"];
-    if (requiredFields.some((field) => !firebaseConfig[field].trim())) return;
+    if (requiredFields.some((field) => !firebaseConfig[field]?.trim())) return null;
 
     const [{ initializeApp }, { getAnalytics, isSupported, logEvent }] = await Promise.all([
         import("https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js"),
         import("https://www.gstatic.com/firebasejs/13.4.0/firebase-analytics.js"),
     ]);
-    if (!(await isSupported())) return;
+    if (!(await isSupported())) return null;
 
     const analytics = getAnalytics(initializeApp(firebaseConfig));
-    trackScroll((percent) => logEvent(analytics, "portfolio_scroll_depth", { depth_percent: percent }));
+    return (name, parameters) => logEvent(analytics, name, parameters);
+}
 
-    if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver((entries) => {
-            for (const entry of entries) {
-                if (!entry.isIntersecting || entry.intersectionRatio < 0.5) continue;
-                observer.unobserve(entry.target);
-                logEvent(analytics, "case_study_view", { project_id: entry.target.closest(".case-card").id });
+async function initializePortfolioAnalytics() {
+    const firebaseReport = await createFirebaseReporter().catch((error) => {
+        console.warn("Firebase Analytics could not start.", error.message);
+        return null;
+    });
+    if (!firebaseReport && !Array.isArray(window.dataLayer)) return;
+
+    const report = firebaseReport || ((name, parameters) => {
+        window.dataLayer.push({ event: name, ...parameters });
+    });
+    trackScroll((percent) => report("portfolio_scroll_depth", { depth_percent: percent }));
+    trackViews(report);
+    trackClicks(report);
+}
+
+function trackViews(report) {
+    if (!("IntersectionObserver" in window)) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        for (const { target, isIntersecting, intersectionRatio } of entries) {
+            if (!isIntersecting || intersectionRatio < 0.5) continue;
+            observer.unobserve(target);
+
+            const project = target.closest(".case-card[id]");
+            if (project) {
+                report("case_study_view", { project_id: project.id });
+            } else {
+                const section = target.closest("section[id]");
+                report(target.dataset.analyticsView || "testimonial_view", { section_id: section.id });
             }
-        }, { threshold: 0.5 });
+        }
+    }, { threshold: 0.5 });
 
-        document.querySelectorAll(".case-card[id] h3").forEach((heading) => observer.observe(heading));
+    document.querySelectorAll("[data-project-heading], [data-analytics-view], #testimonials h2")
+        .forEach((target) => observer.observe(target));
+}
+
+function trackClicks(report) {
+    function trackLink(event) {
+        if (event.type === "auxclick" && event.button !== 1) return;
+        const link = event.target.closest("a[href], summary[data-project-heading]");
+        if (!link) return;
+
+        if (link.matches("summary")) {
+            report("project_catalog_tap", { project_id: link.closest(".case-card").id });
+            return;
+        }
+
+        const customEvent = link.dataset.analyticsEvent;
+        if (customEvent) report(customEvent);
+
+        if (link.getAttribute("href").startsWith("#") && link.hash.length > 1) {
+            report("section_tap", { section_id: link.hash.slice(1) });
+        }
+
+        const photo = link.closest(".screen-grid figure, .highlights-grid figure");
+        if (photo) {
+            const owner = photo.closest(".case-card[id], section[id]");
+            report("photo_view", { section_id: owner.id, photo_id: decodeURIComponent(link.pathname.split("/").pop()) });
+        }
+
+        if (link.hostname === "apps.apple.com") {
+            const project = link.closest(".case-card[id]");
+            if (project) report("app_store_click", { project_id: project.id });
+        }
     }
 
-    document.addEventListener("click", (event) => {
-        const link = event.target.closest("a[href]");
-        if (!link || link.hostname !== "apps.apple.com") return;
-        const project = link.closest(".case-card[id], .project-card[id]");
-        if (project) logEvent(analytics, "app_store_click", { project_id: project.id });
-    }, { capture: true });
+    document.addEventListener("click", trackLink, { capture: true });
+    document.addEventListener("auxclick", trackLink, { capture: true });
 }
 
 function trackScroll(onMilestone) {
