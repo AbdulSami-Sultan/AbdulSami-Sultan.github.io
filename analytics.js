@@ -70,10 +70,10 @@ function trackClicks(report) {
             report("section_tap", { section_id: link.hash.slice(1) });
         }
 
-        const photo = link.closest(".screen-grid figure, .highlights-grid figure");
+        const photo = link.closest(".screen-grid figure, .highlights-grid figure, .feature-screens figure");
         if (photo) {
-            const owner = photo.closest(".case-card[id], section[id]");
-            report("photo_view", { section_id: owner.id, photo_id: decodeURIComponent(link.pathname.split("/").pop()) });
+            const owner = photo.closest(".case-card[id], [data-project-id], section[id]");
+            report("photo_view", { section_id: owner.dataset.projectId || owner.id, photo_id: decodeURIComponent(link.pathname.split("/").pop()) });
         }
 
         if (link.hostname === "apps.apple.com") {
