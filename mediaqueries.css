@@ -1,8 +1,9 @@
 @media (max-width: 54rem) {
-    .hero { grid-template-columns: 1fr; padding-top: 2.75rem; }
+    .hero { grid-template-columns: 1fr; min-height: auto; gap: 2rem; padding-top: 2.75rem; }
     .hero-copy { max-width: 38rem; }
-    .hero-art { width: min(100%, 33rem); justify-self: center; }
+    .case-art { width: min(100%, 33rem); justify-self: center; }
     .case-intro { grid-template-columns: 1fr; }
+    .hero-portrait { width: min(85%, 20rem); }
 }
 
 @media (max-width: 40rem) {
@@ -11,13 +12,13 @@
     .nav-links { width: 100%; align-items: flex-start; gap: .75rem; }
     .nav-links a { min-height: 2.75rem; display: inline-flex; align-items: center; }
     .nav-links.is-enhanced { flex-direction: column; border-top: 1px solid var(--line); padding-top: .75rem; }
-    .hero h1 { font-size: clamp(2.85rem, 10.5vw, 4rem); }
+    .hero h1 { font-size: clamp(2.6rem, 11vw, 4.25rem); }
     .hero-actions, .about-links { column-gap: 1rem; }
     .screen-grid { gap: .5rem; }
     .screen-grid figure { padding: .5rem; }
     .screen-grid figcaption { font-size: .8125rem; line-height: 1.35; }
-    .projects-grid, .skills-grid, .section-container { grid-template-columns: 1fr; }
-    .about-pic { max-width: 17rem; }
+    .projects-grid, .skills-grid { grid-template-columns: 1fr; }
+    .about-containers { grid-template-columns: 1fr; }
     .footer-inner { align-items: flex-start; flex-direction: column; }
 }
 
