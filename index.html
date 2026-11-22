@@ -1,308 +1,314 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Abdul Sami Sultan — Senior iOS Engineer with 5+ years building high-impact apps in Swift, SwiftUI, UIKit, and MVVM.">
-    <meta name="keywords" content="iOS Developer, Senior iOS Engineer, Swift, SwiftUI, UIKit, MVVM, Karachi, Mobile Developer, VPN">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Abdul Sami Sultan, Senior iOS Engineer. Explore Taleemabad and selected work in mobile development, VPN, and security.">
     <meta property="og:title" content="Abdul Sami Sultan — Senior iOS Engineer">
-    <meta property="og:description" content="5+ years building high-impact iOS apps used by millions — VPN & cybersecurity platforms to consumer apps.">
+    <meta property="og:description" content="Selected mobile engineering work, including the Taleemabad learning app.">
     <meta property="og:image" content="./Portrait/Abdul_Sami_Sultan.jpeg">
     <title>Abdul Sami Sultan — Senior iOS Engineer</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <script src="script.js" defer></script>
 </head>
-<body>
-    <!-- DESKTOP NAV -->
-    <nav id="desktop-nav">
-        <div class="logo">Abdul Sami Sultan</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Skills</a></li>
-            <li><a href="#work-experience">Work</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <!-- MOBILE NAV -->
-    <nav id="hamburger-nav">
-        <div class="logo">Abdul Sami Sultan</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span><span></span><span></span>
+<body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <nav class="shell nav-bar" aria-label="Main navigation">
+            <a class="brand" href="#top"><span class="monogram" aria-hidden="true">SS</span> Sami Sultan</a>
+            <button type="button" class="menu-toggle btn btn-ghost" aria-expanded="false" aria-controls="site-links" hidden>Menu</button>
+            <div class="nav-links" id="site-links">
+                <a href="#case-study">Case study</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a class="btn btn-ghost nav-contact" href="#contact">Work with me</a>
             </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
-                <li><a href="#work-experience" onclick="toggleMenu()">Work</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </nav>
+    </header>
+    <main id="main">
+        <section id="profile" class="hero shell" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="section-label">Featured mobile app project</p>
+                <h1 id="hero-title">Learning made <em>colorful, clear,</em> and fun.</h1>
+                <p class="hero-description">Taleemabad is an e-learning platform for students in Grades 1–5, bringing video lessons, quizzes, tests, and scoring into one playful mobile experience.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#case-study">Explore the case study</a>
+                    <a class="text-link" href="#app-screens">View app screens</a>
+                </div>
+                <dl class="hero-meta">
+                    <div><dt>Platform</dt><dd>iOS application</dd></div>
+                    <div><dt>Audience</dt><dd>Grades 1–5</dd></div>
+                    <div><dt>Category</dt><dd>EdTech</dd></div>
+                </dl>
             </div>
-        </div>
-    </nav>
+            <div class="hero-art">
+                <img class="phone phone-left" src="assets/Taleemabad/Taleemabad%20-%20mcq%201.jpeg" width="300" height="649" alt="Taleemabad multiple-choice quiz">
+                <img class="phone phone-center" src="assets/Taleemabad/Taleemabad%20-%20grade%20selection.jpeg" width="300" height="649" alt="Taleemabad grade selection with colorful grade tiles">
+                <img class="phone phone-right" src="assets/Taleemabad/Taleemabad%20-%20coming%20soon.jpeg" width="300" height="649" alt="Taleemabad app screen featuring its illustrated mascot">
+            </div>
+        </section>
 
-    <!-- HERO -->
-    <section id="profile">
-        <div class="profile-pic-wrapper">
-            <div class="profile-pic-ring">
-                <img src="./Portrait/Abdul_Sami_Sultan.jpeg" alt="Abdul Sami Sultan" class="profile-pic">
-            </div>
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I'm</p>
-            <h1 class="title">Abdul Sami Sultan</h1>
-            <p class="section__text__p2">Senior iOS Engineer</p>
-            <div class="profile-tagline">
-                <span class="tag">Swift</span>
-                <span class="tag">SwiftUI</span>
-                <span class="tag">UIKit</span>
-                <span class="tag">MVVM</span>
-                <span class="tag">VPN &amp; Security</span>
-            </div>
-            <div class="btn-container">
-                <button class="btn btn-primary" onclick="window.open('./Resume/Abdul_Sami_Sultan_Resume.pdf')">Download Resume</button>
-                <button class="btn btn-ghost" onclick="location.href='./#contact'">Contact Info</button>
-            </div>
-            <div id="socials-container">
-                <img src="./assets/linkedin.png" alt="LinkedIn" class="icon social-icon" onclick="location.href='https://www.linkedin.com/in/abdulsami-sultan/'">
-                <img src="./assets/github.png" alt="GitHub" class="icon social-icon" onclick="location.href='https://github.com/abdulsami-sultan'">
-                <img src="./assets/medium.png" alt="Medium" class="icon social-icon" onclick="location.href='https://medium.com/@abdulsami923'">
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-        <p class="section-label">Get To Know More</p>
-        <h1 class="title">About Me</h1>
-        <div class="section-container">
-            <div class="about-pic-wrapper">
-                <img src="./Portrait/AboutMe.png" alt="About Me" class="about-pic">
-            </div>
-            <div class="about-details-container">
-                <div class="about-containers">
-                    <div class="details-container">
-                        <img src="./assets/experience.png" alt="Experience" class="icon stat-icon">
-                        <h3>Experience</h3>
-                        <p>5+ Years<br>Senior iOS Engineer</p>
+        <section id="case-study" class="case-study">
+            <div class="shell section-body">
+                <div class="case-intro">
+                    <div>
+                        <p class="section-label">Case study</p>
+                        <h2 class="title">Taleemabad</h2>
                     </div>
-                    <div class="details-container">
-                        <img src="./assets/education.png" alt="Education" class="icon stat-icon">
-                        <h3>Education</h3>
-                        <p>BSc CS · DHA Suffa University<br><br>MSc CS · IBA Karachi<br>CGPA 3.2</p>
+                    <div>
+                        <p class="case-summary">Students pick a grade, watch a lesson, and check their understanding with quizzes and scores.</p>
+                        <p>I contributed to the native iOS app during my internship at Orenda Project. My work included refactoring Swift code for readability and maintainability.</p>
                     </div>
                 </div>
-                <div class="text-container">
-                    <p>5+ years building high-impact iOS apps used by millions — from VPN &amp; cybersecurity platforms to consumer apps. At SpurSol I lead mobile development and architect scalable solutions. Previously at Disrupt.com (Gaditek), I worked on IvacyVPN and PureVPN — enterprise VPN products with 6,500+ servers across 71+ countries.</p>
+                <div id="app-screens" class="screen-grid">
+                    <figure>
+                        <a href="assets/Taleemabad/Taleemabad%20-%20dashboard.jpeg"><img loading="lazy" width="300" height="649" src="assets/Taleemabad/Taleemabad%20-%20dashboard.jpeg" alt="Taleemabad subject dashboard"></a>
+                        <figcaption>Choose a subject</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="assets/Taleemabad/Taleemabad%20-%20math%20video%20section.jpeg"><img loading="lazy" width="300" height="649" src="assets/Taleemabad/Taleemabad%20-%20math%20video%20section.jpeg" alt="Taleemabad math video lesson list"></a>
+                        <figcaption>Find a video lesson</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="assets/Taleemabad/Taleemabad%20-%20level%203%20mcqs%20result.jpeg"><img loading="lazy" width="300" height="649" src="assets/Taleemabad/Taleemabad%20-%20level%203%20mcqs%20result.jpeg" alt="Taleemabad multiple-choice quiz results"></a>
+                        <figcaption>Review quiz results</figcaption>
+                    </figure>
                 </div>
             </div>
-        </div>
-        <img src="./assets/down_arrow.png" alt="Scroll down" class="icon arrow" onclick="location.href='./#experience'">
-    </section>
+        </section>
 
-    <!-- SKILLS -->
-    <section id="experience">
-        <p class="section-label">Explore My</p>
-        <h1 class="title">Skills</h1>
-        <div class="skills-grid">
-            <div class="skills-card">
-                <h2 class="skills-category">iOS Development</h2>
-                <div class="skill-chips">
-                    <div class="skill-chip"><span class="chip-name">Swift</span><span class="chip-level expert">Expert</span></div>
-                    <div class="skill-chip"><span class="chip-name">SwiftUI</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">UIKit</span><span class="chip-level expert">Expert</span></div>
-                    <div class="skill-chip"><span class="chip-name">MVVM</span><span class="chip-level expert">Expert</span></div>
-                    <div class="skill-chip"><span class="chip-name">Combine</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">Network Extension</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">XCTest</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">Auto Layout</span><span class="chip-level expert">Expert</span></div>
-                </div>
-            </div>
-            <div class="skills-card">
-                <h2 class="skills-category">Tools &amp; Infrastructure</h2>
-                <div class="skill-chips">
-                    <div class="skill-chip"><span class="chip-name">CI/CD</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">Firebase</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">REST API</span><span class="chip-level expert">Expert</span></div>
-                    <div class="skill-chip"><span class="chip-name">AtomSDK</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">Git</span><span class="chip-level expert">Expert</span></div>
-                    <div class="skill-chip"><span class="chip-name">App Store Connect</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">Xcode &amp; Instruments</span><span class="chip-level expert">Expert</span></div>
-                    <div class="skill-chip"><span class="chip-name">Agile / Scrum</span><span class="chip-level experienced">Experienced</span></div>
-                </div>
-            </div>
-        </div>
-        <img src="./assets/down_arrow.png" alt="Scroll down" class="icon arrow" onclick="location.href='./#work-experience'">
-    </section>
-
-    <!-- WORK EXPERIENCE -->
-    <section id="work-experience">
-        <p class="section-label">My Career</p>
-        <h1 class="title">Work Experience</h1>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h2 class="job-title">Senior Software Engineer</h2>
-                    <p class="job-company">SpurSol &middot; Full-time</p>
-                    <p class="job-date">Jul 2025 &ndash; Present &middot; Karachi, On-site</p>
-                    <ul class="job-bullets">
-                        <li>Led mobile development team, driving innovation and efficiency in project execution.</li>
-                        <li>Implemented CI/CD pipeline to automate deployment, significantly enhancing productivity.</li>
-                        <li>Leveraged AI tooling (Claude Code) to accelerate the development cycle.</li>
-                        <li>Contributed to SpurSol's growth as a startup delivering cutting-edge software solutions.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h2 class="job-title">Senior Software Engineer &mdash; iOS</h2>
-                    <p class="job-company">Disrupt.com (Gaditek) &middot; Full-time</p>
-                    <p class="job-date">Jan 2024 &ndash; Jun 2025 &middot; 1 yr 6 mos &middot; Karachi, On-site</p>
-                    <ul class="job-bullets">
-                        <li>Designed, built and shipped features for IvacyVPN on iOS and macOS platforms.</li>
-                        <li>Collaborated with Product team to ideate and implement innovative features.</li>
-                        <li>Developed comprehensive unit test coverage for reliability and edge cases.</li>
-                        <li>Enforced Clean Code Practices and Swift Style Guidelines.</li>
-                        <li><em>Stack: AtomSDK &middot; Network Extension &middot; Auto Layout &middot; MVVM</em></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h2 class="job-title">Software Engineer &mdash; iOS</h2>
-                    <p class="job-company">PureSquare / Disrupt.com (Gaditek) &middot; Full-time</p>
-                    <p class="job-date">Sep 2022 &ndash; Apr 2024 &middot; 1 yr 8 mos &middot; Karachi, On-site</p>
-                    <ul class="job-bullets">
-                        <li>Owned iOS feature delivery for PureVPN &mdash; 6,500+ servers across 71+ countries.</li>
-                        <li>Built and fixed app features within the Cyber Security department at PureSquare.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h2 class="job-title">iOS Developer</h2>
-                    <p class="job-company">Salsoft Technologies &middot; Full-time</p>
-                    <p class="job-date">Feb 2022 &ndash; Aug 2022 &middot; 7 mos &middot; Karachi</p>
-                    <ul class="job-bullets">
-                        <li>Built OysterVPN for iOS and macOS using Apple Network Extension.</li>
-                        <li>Integrated VPN protocols: IPSec, IKEv2, OpenVPN (TCP/UDP).</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h2 class="job-title">iOS Developer</h2>
-                    <p class="job-company">Novatex Limited &middot; Full-time</p>
-                    <p class="job-date">Aug 2021 &ndash; Jan 2022 &middot; 6 mos &middot; Karachi, On-site</p>
-                    <ul class="job-bullets">
-                        <li>Maintained Sasta Tareen &mdash; Pakistan's first price-comparison grocery app (18,000+ products).</li>
-                        <li>Implemented new features with Swift and UIKit, improving stability and UX.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h2 class="job-title">iOS Developer &mdash; Intern</h2>
-                    <p class="job-company">Orenda Project &middot; Part-time, Remote</p>
-                    <p class="job-date">Jan 2021 &ndash; Jul 2021 &middot; 7 mos</p>
-                    <ul class="job-bullets">
-                        <li>Contributed to Taleemabad Learning App, a native iOS e-learning platform.</li>
-                        <li>Applied Swift best practices and refactored for readability and maintainability.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <img src="./assets/down_arrow.png" alt="Scroll down" class="icon arrow" onclick="location.href='./#projects'">
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-        <p class="section-label">Browse My Recent</p>
-        <h1 class="title">Projects</h1>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="./assets/project1.png" alt="ABB Quiz App" class="project-img">
-                <div class="project-info">
-                    <h2 class="project-name">ABB Quiz App</h2>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Swift</span>
-                        <span class="tech-tag">UIKit</span>
-                        <span class="tech-tag">Firebase</span>
+        <section class="shell section-body" id="projects">
+            <p class="section-label">Mobile and web development</p>
+            <h2 class="title">More projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="./assets/project1.png" alt="ABB Quiz App" class="project-img" loading="lazy">
+                    <div class="project-info">
+                        <h3 class="project-name">ABB Quiz App</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Swift</span>
+                            <span class="tech-tag">UIKit</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                        <a class="btn btn-primary project-btn" href="https://apps.apple.com/us/app/abb-quiz-app/id1538281636">App Store</a>
                     </div>
-                    <button class="btn btn-primary project-btn" onclick="location.href='https://apps.apple.com/us/app/abb-quiz-app/id1538281636'">App Store</button>
                 </div>
-            </div>
-            <div class="project-card">
-                <img src="./assets/project2.png" alt="OysterVPN" class="project-img">
-                <div class="project-info">
-                    <h2 class="project-name">OysterVPN</h2>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Swift</span>
-                        <span class="tech-tag">NetworkExtension</span>
-                        <span class="tech-tag">MVVM</span>
+                <div class="project-card">
+                    <img src="./assets/project2.png" alt="OysterVPN" class="project-img" loading="lazy">
+                    <div class="project-info">
+                        <h3 class="project-name">OysterVPN</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Swift</span>
+                            <span class="tech-tag">NetworkExtension</span>
+                            <span class="tech-tag">MVVM</span>
+                        </div>
+                        <a class="btn btn-primary project-btn" href="https://apps.apple.com/ca/app/oystervpn-secure-and-fast-vpn/id1639558080">App Store</a>
                     </div>
-                    <button class="btn btn-primary project-btn" onclick="location.href='https://apps.apple.com/ca/app/oystervpn-secure-and-fast-vpn/id1639558080'">App Store</button>
                 </div>
-            </div>
-            <div class="project-card">
-                <img src="./assets/project3.png" alt="Sanatkar" class="project-img">
-                <div class="project-info">
-                    <h2 class="project-name">Sanatkar</h2>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Swift</span>
-                        <span class="tech-tag">UIKit</span>
+                <div class="project-card">
+                    <img src="./assets/project3.png" alt="Sanatkar" class="project-img" loading="lazy">
+                    <div class="project-info">
+                        <h3 class="project-name">Sanatkar</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Swift</span>
+                            <span class="tech-tag">UIKit</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="./assets/project5.png" alt="Social Media App" class="project-img" loading="lazy">
+                    <div class="project-info">
+                        <h3 class="project-name">Social Media App</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                        <a class="btn btn-ghost project-btn" href="https://github.com/AbdulSami-Sultan/Social-Media-App">GitHub</a>
                     </div>
                 </div>
             </div>
-            <div class="project-card">
-                <img src="./assets/project5.png" alt="Social Media App" class="project-img">
-                <div class="project-info">
-                    <h2 class="project-name">Social Media App</h2>
-                    <div class="tech-tags">
-                        <span class="tech-tag">React Native</span>
-                        <span class="tech-tag">Firebase</span>
+        </section>
+
+        <section class="shell section-body" id="about">
+            <p class="section-label">Get To Know More</p>
+            <h2 class="title">About Me</h2>
+            <div class="section-container">
+                <div class="about-pic-wrapper">
+                    <img src="./Portrait/Abdul_Sami_Sultan.jpeg" alt="About Me" class="about-pic">
+                </div>
+                <div class="about-details-container">
+                    <div class="about-containers">
+                        <div class="details-container">
+                            <img src="./assets/experience.png" alt="Experience" class="icon stat-icon">
+                            <h3>Experience</h3>
+                            <p>5+ Years<br>Senior iOS Engineer</p>
+                        </div>
+                        <div class="details-container">
+                            <img src="./assets/education.png" alt="Education" class="icon stat-icon">
+                            <h3>Education</h3>
+                            <p>BSc CS · DHA Suffa University<br><br>MSc CS · IBA Karachi<br>CGPA 3.2</p>
+                        </div>
                     </div>
-                    <button class="btn btn-ghost project-btn" onclick="location.href='https://github.com/AbdulSami-Sultan/Social-Media-App'">GitHub</button>
+                    <div class="text-container">
+                        <p>5+ years building high-impact iOS apps used by millions — from VPN &amp; cybersecurity platforms to consumer apps. At SpurSol I lead mobile development and architect scalable solutions. Previously at Disrupt.com (Gaditek), I worked on IvacyVPN and PureVPN — enterprise VPN products with 6,500+ servers across 71+ countries.</p>
+                    </div>
+                    <div class="about-links">
+                        <a class="btn btn-primary" href="Resume/Abdul_Sami_Sultan_Resume.pdf">View résumé</a>
+                        <a class="text-link" href="https://github.com/abdulsami-sultan">GitHub</a>
+                        <a class="text-link" href="https://medium.com/@abdulsami923">Medium</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <img src="./assets/down_arrow.png" alt="Scroll down" class="icon arrow" onclick="location.href='./#contact'">
-    </section>
+        </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-        <p class="section-label">Get In Touch</p>
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-card">
-            <div class="contact-row">
-                <img src="./assets/email.png" alt="Email" class="icon contact-icon">
-                <a href="mailto:abdulsami923@gmail.com">abdulsami923@gmail.com</a>
+        <section class="shell section-body" id="experience">
+            <p class="section-label">Explore My</p>
+            <h2 class="title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skills-card">
+                    <h3 class="skills-category">iOS Development</h3>
+                    <div class="skill-chips">
+                        <div class="skill-chip"><span class="chip-name">Swift</span><span class="chip-level expert">Expert</span></div>
+                        <div class="skill-chip"><span class="chip-name">SwiftUI</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">UIKit</span><span class="chip-level expert">Expert</span></div>
+                        <div class="skill-chip"><span class="chip-name">MVVM</span><span class="chip-level expert">Expert</span></div>
+                        <div class="skill-chip"><span class="chip-name">Combine</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">Network Extension</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">XCTest</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">Auto Layout</span><span class="chip-level expert">Expert</span></div>
+                    </div>
+                </div>
+                <div class="skills-card">
+                    <h3 class="skills-category">Tools &amp; Infrastructure</h3>
+                    <div class="skill-chips">
+                        <div class="skill-chip"><span class="chip-name">CI/CD</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">Firebase</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">REST API</span><span class="chip-level expert">Expert</span></div>
+                        <div class="skill-chip"><span class="chip-name">AtomSDK</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">Git</span><span class="chip-level expert">Expert</span></div>
+                        <div class="skill-chip"><span class="chip-name">App Store Connect</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">Xcode &amp; Instruments</span><span class="chip-level expert">Expert</span></div>
+                        <div class="skill-chip"><span class="chip-name">Agile / Scrum</span><span class="chip-level experienced">Experienced</span></div>
+                    </div>
+                </div>
             </div>
-            <div class="contact-divider"></div>
-            <div class="contact-row">
-                <img src="./assets/linkedin.png" alt="LinkedIn" class="icon contact-icon">
-                <a href="https://www.linkedin.com/in/abdulsami-sultan/">LinkedIn Profile</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Skills</a></li>
-            <li><a href="#work-experience">Work</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <p>Copyright &copy; 2025 Abdul Sami Sultan. All Rights Reserved.</p>
+        <section class="shell section-body" id="work-experience">
+            <p class="section-label">My Career</p>
+            <h2 class="title">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3 class="job-title">Senior Software Engineer</h3>
+                        <p class="job-company">SpurSol &middot; Full-time</p>
+                        <p class="job-date">Jul 2025 &ndash; Present &middot; Karachi, On-site</p>
+                        <ul class="job-bullets">
+                            <li>Led mobile development team, driving innovation and efficiency in project execution.</li>
+                            <li>Implemented CI/CD pipeline to automate deployment, significantly enhancing productivity.</li>
+                            <li>Leveraged AI tooling (Claude Code) to accelerate the development cycle.</li>
+                            <li>Contributed to SpurSol's growth as a startup delivering cutting-edge software solutions.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3 class="job-title">Senior Software Engineer &mdash; iOS</h3>
+                        <p class="job-company">Disrupt.com (Gaditek) &middot; Full-time</p>
+                        <p class="job-date">Jan 2024 &ndash; Jun 2025 &middot; 1 yr 6 mos &middot; Karachi, On-site</p>
+                        <ul class="job-bullets">
+                            <li>Designed, built and shipped features for IvacyVPN on iOS and macOS platforms.</li>
+                            <li>Collaborated with Product team to ideate and implement innovative features.</li>
+                            <li>Developed comprehensive unit test coverage for reliability and edge cases.</li>
+                            <li>Enforced Clean Code Practices and Swift Style Guidelines.</li>
+                            <li><em>Stack: AtomSDK &middot; Network Extension &middot; Auto Layout &middot; MVVM</em></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3 class="job-title">Software Engineer &mdash; iOS</h3>
+                        <p class="job-company">PureSquare / Disrupt.com (Gaditek) &middot; Full-time</p>
+                        <p class="job-date">Sep 2022 &ndash; Apr 2024 &middot; 1 yr 8 mos &middot; Karachi, On-site</p>
+                        <ul class="job-bullets">
+                            <li>Owned iOS feature delivery for PureVPN &mdash; 6,500+ servers across 71+ countries.</li>
+                            <li>Built and fixed app features within the Cyber Security department at PureSquare.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3 class="job-title">iOS Developer</h3>
+                        <p class="job-company">Salsoft Technologies &middot; Full-time</p>
+                        <p class="job-date">Feb 2022 &ndash; Aug 2022 &middot; 7 mos &middot; Karachi</p>
+                        <ul class="job-bullets">
+                            <li>Built OysterVPN for iOS and macOS using Apple Network Extension.</li>
+                            <li>Integrated VPN protocols: IPSec, IKEv2, OpenVPN (TCP/UDP).</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3 class="job-title">iOS Developer</h3>
+                        <p class="job-company">Novatex Limited &middot; Full-time</p>
+                        <p class="job-date">Aug 2021 &ndash; Jan 2022 &middot; 6 mos &middot; Karachi, On-site</p>
+                        <ul class="job-bullets">
+                            <li>Maintained Sasta Tareen &mdash; Pakistan's first price-comparison grocery app (18,000+ products).</li>
+                            <li>Implemented new features with Swift and UIKit, improving stability and UX.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3 class="job-title">iOS Developer &mdash; Intern</h3>
+                        <p class="job-company">Orenda Project &middot; Part-time, Remote</p>
+                        <p class="job-date">Jan 2021 &ndash; Jul 2021 &middot; 7 mos</p>
+                        <ul class="job-bullets">
+                            <li>Contributed to Taleemabad Learning App, a native iOS e-learning platform.</li>
+                            <li>Applied Swift best practices and refactored for readability and maintainability.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="shell section-body" id="contact">
+            <p class="section-label">Get In Touch</p>
+            <h2 class="title">Contact Me</h2>
+            <div class="contact-card">
+                <div class="contact-row">
+                    <img src="./assets/email.png" alt="Email" class="icon contact-icon">
+                    <a href="mailto:abdulsami923@gmail.com">abdulsami923@gmail.com</a>
+                </div>
+                <div class="contact-divider"></div>
+                <div class="contact-row">
+                    <img src="./assets/linkedin.png" alt="LinkedIn" class="icon contact-icon">
+                    <a href="https://www.linkedin.com/in/abdulsami-sultan/">LinkedIn Profile</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="site-footer">
+        <div class="shell footer-inner">
+            <a class="brand" href="#top"><span class="monogram" aria-hidden="true">SS</span> Abdul Sami Sultan</a>
+            <nav aria-label="Footer navigation">
+                <a href="#experience">Skills</a>
+                <a href="#work-experience">Work</a>
+                <a href="#contact">Contact</a>
+                <a href="#top">Back to top</a>
+            </nav>
+        </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
