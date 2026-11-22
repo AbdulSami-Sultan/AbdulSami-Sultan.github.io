@@ -131,10 +131,54 @@ details[open] > .catalog-row::after { content: "−"; }
 .process-layout p:not(.section-label) { margin-top: .55rem; color: var(--muted); }
 .highlights-band { background: #eaeee6; }
 .highlights-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .85rem; }
-.highlights-grid figure { background: var(--white); border-radius: .9rem; overflow: hidden; }
-.highlights-grid a { display: block; }
-.highlights-grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.highlights-grid figcaption { padding: .75rem; font-size: .875rem; color: var(--muted); }
+.highlights-grid figure {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    isolation: isolate;
+}
+.highlights-grid a { position: relative; z-index: 1; display: block; border-radius: .9rem .9rem 0 0; }
+.highlights-grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: inherit; }
+.highlights-grid figcaption {
+    display: grid;
+    align-content: center;
+    gap: .55rem;
+    padding: .75rem;
+    border-radius: 0 0 .9rem .9rem;
+    background: var(--white);
+    color: var(--muted);
+    font-size: .875rem;
+    text-align: center;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .highlights-grid a {
+        transform: translateY(.85rem);
+        border-radius: .9rem;
+        transition: transform .45s ease, border-radius .45s ease;
+    }
+    .highlights-grid figcaption {
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform .45s ease, opacity .3s ease, box-shadow .45s ease;
+    }
+    .highlights-grid figcaption::after {
+        content: "";
+        justify-self: center;
+        width: 1.75rem;
+        height: 2px;
+        border-radius: 1px;
+        background: var(--blue);
+    }
+    .highlights-grid figure:is(:hover, :focus-within) a {
+        transform: translateY(0);
+        border-radius: .9rem .9rem 0 0;
+    }
+    .highlights-grid figure:is(:hover, :focus-within) figcaption {
+        transform: translateY(0);
+        opacity: 1;
+        box-shadow: 0 .75rem 1.5rem #1722341f;
+    }
+}
 
 .contact-panel { margin-top: 1.25rem; padding: clamp(1.25rem, 4vw, 2.5rem); background: var(--blue); color: var(--white); border-radius: 1.7rem; align-items: center; }
 .contact-copy .title { font-size: clamp(2.15rem, 4.5vw, 3.75rem); }
