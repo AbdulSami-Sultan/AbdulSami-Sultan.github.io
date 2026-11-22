@@ -100,12 +100,18 @@ details[open] > .catalog-row::after { content: "−"; }
 .case-details { display: grid; gap: .65rem; }
 .case-details dt { font-weight: 600; }
 .case-details dd { color: var(--muted); }
-.screen-grid { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; }
-.wholesale-screens { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.screen-grid figure { background: var(--canvas); border-radius: .8rem; text-align: center; padding: .65rem; }
-.screen-grid a { display: block; margin-inline: auto; max-width: 10rem; }
+.case-gallery-link { grid-column: 1 / -1; justify-self: start; }
+.project-gallery-nav { display: flex; flex-wrap: wrap; gap: .55rem; margin-block: 1.15rem 2rem; }
+.project-gallery-nav a { padding: .4rem .75rem; border: 1px solid var(--line); border-radius: 999px; background: var(--white); font-size: .875rem; text-decoration: none; }
+.project-gallery-nav a:hover { border-color: var(--blue); color: var(--blue); }
+.project-gallery { padding-block: 1.25rem 1.5rem; border-top: 1px solid var(--line); }
+.gallery-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .5rem 1rem; margin-bottom: .85rem; }
+.gallery-heading h3 { font-size: 1.35rem; font-weight: 600; }
+.screen-grid { display: grid; grid-auto-flow: column; grid-auto-columns: clamp(8rem, 19vw, 11rem); gap: .65rem; overflow-x: auto; padding: .3rem .3rem .65rem; scroll-snap-type: x proximity; }
+.screen-grid figure { background: var(--white); border: 1px solid var(--line); border-radius: .8rem; text-align: center; padding: .55rem; scroll-snap-align: start; }
+.screen-grid a { display: block; border-radius: .4rem; }
 .screen-grid img { width: 100%; aspect-ratio: 9 / 19.5; object-fit: contain; }
-.screen-grid figcaption { margin-top: .45rem; font-size: .8rem; }
+.screen-grid figcaption { margin-top: .45rem; color: var(--muted); font-size: .8rem; }
 .project-img { max-height: 15rem; border-radius: .75rem; }
 
 .about-copy { display: flow-root; color: var(--muted); }

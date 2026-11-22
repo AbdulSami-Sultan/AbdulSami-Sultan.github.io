@@ -24,7 +24,6 @@
     .catalog-status { grid-column: 2; justify-self: end; }
     .process-layout { grid-template-columns: 1fr; }
     .process-layout > div:not(:first-child) { padding-top: 0; }
-    .wholesale-screens { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 24rem) {
