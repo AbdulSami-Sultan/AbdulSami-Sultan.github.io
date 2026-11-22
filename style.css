@@ -200,8 +200,40 @@ details[open] > .catalog-row::after { content: "−"; }
 .contact-copy .title { font-size: clamp(2.15rem, 4.5vw, 3.75rem); }
 .contact-copy p { margin: 1rem 0 1.6rem; max-width: 28rem; }
 .contact-email { overflow-wrap: anywhere; font-weight: 600; }
-.contact-links, .site-footer nav { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; }
-.contact-links { margin-top: 1rem; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; }
+.contact-links { display: flex; flex-wrap: wrap; gap: .75rem; list-style: none; margin: 1rem 0 0; padding: 0; }
+.social-link {
+    display: grid;
+    place-items: center;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    width: 3.25rem;
+    height: 3.25rem;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    background: var(--white);
+}
+.social-linkedin { --social-color: #0077b5; }
+.social-github { --social-color: #24292f; }
+.social-medium { --social-color: #121212; }
+.social-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--social-color);
+    transform: translateY(100%);
+}
+.social-link img { width: 1.4rem; height: 1.4rem; object-fit: contain; filter: brightness(0); }
+.social-link:is(:hover, :focus-visible)::before { transform: translateY(0); }
+.social-link:is(:hover, :focus-visible) img { filter: brightness(0) invert(1); }
+.social-link:focus-visible { outline-color: var(--white); }
+
+@media (prefers-reduced-motion: no-preference) {
+    .social-link::before, .social-link img { transition: transform .5s ease, filter .5s ease; }
+    .social-link:is(:hover, :focus-visible) img { transform: rotateY(360deg); }
+}
 .enquiry-form { display: grid; gap: .85rem; background: var(--white); color: var(--ink); padding: clamp(1rem, 3vw, 1.75rem); border-radius: 1rem; }
 .enquiry-form h3 { font-size: 1.35rem; font-weight: 600; }
 .enquiry-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
