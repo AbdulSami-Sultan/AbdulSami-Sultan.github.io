@@ -59,3 +59,35 @@ appSelector.addEventListener("click", (event) => {
     appLink.href = selected.dataset.appTarget;
     appLink.textContent = `Explore ${appName}`;
 });
+
+const accentToggle = document.querySelector(".accent-toggle");
+accentToggle.hidden = false;
+accentToggle.addEventListener("click", () => {
+    const warm = document.documentElement.classList.toggle("warm-accent");
+    accentToggle.setAttribute("aria-pressed", String(warm));
+});
+
+const enquiry = document.getElementById("enquiry-form");
+enquiry.hidden = false;
+document.querySelectorAll("[data-project]").forEach((link) => {
+    link.addEventListener("click", () => {
+        enquiry.elements.namedItem("project").value = link.dataset.project;
+    });
+});
+
+enquiry.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const details = new FormData(enquiry);
+    const subject = `iOS enquiry: ${details.get("project")}`;
+    const body = [
+        `Name: ${details.get("name")}`,
+        `Email: ${details.get("email")}`,
+        `Company: ${details.get("company") || "—"}`,
+        `Platform: ${details.get("platform")}`,
+        `Timeline: ${details.get("timeline") || "—"}`,
+        `Budget: ${details.get("budget") || "—"}`,
+        "",
+        details.get("message"),
+    ].join("\n");
+    window.location.href = `mailto:abdulsami.sultan.ask@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});

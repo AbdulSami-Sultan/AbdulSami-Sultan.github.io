@@ -2,7 +2,7 @@
     .hero { grid-template-columns: 1fr; min-height: auto; gap: 2rem; padding-top: 2.75rem; }
     .hero-copy { max-width: 38rem; }
     .case-art { width: min(100%, 33rem); justify-self: center; }
-    .case-intro { grid-template-columns: 1fr; }
+    .case-intro, .contact-layout { grid-template-columns: 1fr; }
     .app-console { width: min(100%, 34rem); justify-self: center; }
 }
 
@@ -17,8 +17,7 @@
     .screen-grid { gap: .5rem; }
     .screen-grid figure { padding: .5rem; }
     .screen-grid figcaption { font-size: .8125rem; line-height: 1.35; }
-    .projects-grid, .skills-grid { grid-template-columns: 1fr; }
-    .about-containers { grid-template-columns: 1fr; }
+    .projects-grid, .skills-grid, .about-containers, .proof-facts, .offer-grid, .enquiry-grid { grid-template-columns: 1fr; }
     .footer-inner { align-items: flex-start; flex-direction: column; }
 }
 
