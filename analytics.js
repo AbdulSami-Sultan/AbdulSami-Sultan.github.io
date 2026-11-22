@@ -1,15 +1,7 @@
-// Paste the Firebase web app configuration from Project settings → Your apps.
-const firebaseConfig = {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: "",
-    measurementId: "",
-};
-
 async function initializePortfolioAnalytics() {
+    const { default: firebaseConfig } = await import("./firebase-config.generated.js").catch(() => ({}));
+    if (!firebaseConfig) return;
+
     const requiredFields = ["apiKey", "projectId", "appId", "measurementId"];
     if (requiredFields.some((field) => !firebaseConfig[field].trim())) return;
 

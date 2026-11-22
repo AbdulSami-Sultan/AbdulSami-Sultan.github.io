@@ -141,3 +141,9 @@ I'm always happy to chat about iOS development, architecture patterns, VPN tech,
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=0:5856D6,100:007AFF&height=120&section=footer)
 
 </div>
+
+## Firebase Analytics setup
+
+Copy `.env.example` to `.env` and fill in the values from the Firebase web app config. Run `node generate-firebase-config.mjs` with Node.js 22 or newer after changing the values.
+
+Include `firebase-config.generated.js` in the published site files to enable Analytics. Keep `.env` outside the published files. The generated module is public browser configuration and should contain only Firebase web app settings. Both files are ignored by Git. GitHub Pages deployments from a branch need a build or upload step to include the generated module.
