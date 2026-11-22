@@ -236,3 +236,16 @@ section[id], #app-screens { scroll-margin-top: 1rem; }
 .case-card .screen-grid { grid-column: 1 / -1; margin: 0; }
 .case-card .screen-grid figure { background: var(--panel); }
 .case-card .screen-grid img { width: 100%; aspect-ratio: 9 / 19.5; object-fit: contain; }
+
+.hero-projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem 1rem;
+    margin-top: 1.5rem;
+    color: var(--muted);
+    font-size: .875rem;
+}
+.hero-projects a { color: var(--blue); text-underline-offset: .2em; }
+.featured-case { border-top: 2px solid var(--blue); }
+.case-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+.case-card .wholesale-screens { grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr)); }
