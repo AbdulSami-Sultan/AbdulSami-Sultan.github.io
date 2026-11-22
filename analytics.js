@@ -64,7 +64,10 @@ function trackClicks(report) {
         }
 
         const customEvent = link.dataset.analyticsEvent;
-        if (customEvent) report(customEvent);
+        if (customEvent) {
+            const articleId = link.dataset.articleId;
+            report(customEvent, articleId ? { article_id: articleId } : undefined);
+        }
 
         if (link.getAttribute("href").startsWith("#") && link.hash.length > 1) {
             report("section_tap", { section_id: link.hash.slice(1) });

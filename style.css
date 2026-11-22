@@ -244,6 +244,14 @@ details[open] > .catalog-row::after { content: "−"; }
 .enquiry-form p { color: var(--muted); font-size: .8rem; }
 .site-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 1.25rem; border-top: 1px solid var(--line); padding-block: 1.4rem; color: var(--muted); font-size: .875rem; }
 .writing-layout { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: .75rem 2rem; }
+.writing-grid { flex: 0 0 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr)); gap: 1rem; margin-top: .75rem; }
+.writing-card { min-width: 0; }
+.writing-card a { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); height: 100%; overflow: hidden; border: 1px solid var(--line); border-radius: 1rem; background: var(--white); text-decoration: none; }
+.writing-card a:is(:hover, :focus-visible) { border-color: var(--blue); }
+.writing-card img { width: 100%; height: 100%; object-fit: cover; background: var(--lilac); }
+.writing-card a > div { padding: clamp(.85rem, 3vw, 1.35rem); }
+.writing-card h3 { font-size: clamp(1.05rem, 2vw, 1.35rem); line-height: 1.3; }
+.writing-card p { margin-block: .5rem .85rem; color: var(--muted); font-size: .9rem; }
 .catalog-toolbar, .catalog-filters { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem 1rem; }
 .catalog-toolbar { justify-content: space-between; margin-top: .75rem; }
 .catalog-toolbar .catalog-intro { margin: 0; }

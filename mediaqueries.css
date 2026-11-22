@@ -6,6 +6,8 @@
 }
 
 @media (max-width: 40rem) {
+    .writing-card a { grid-template-columns: 1fr; }
+    .writing-card img { aspect-ratio: 320 / 214; height: auto; }
     .highlights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .shell { width: calc(100% - 2rem); }
     .nav-bar { flex-wrap: wrap; min-height: 3.5rem; }
