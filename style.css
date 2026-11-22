@@ -139,8 +139,11 @@ details[open] > .catalog-row::after { content: "−"; }
 .highlights-grid a { position: relative; z-index: 1; display: block; border-radius: .9rem .9rem 0 0; }
 .highlights-grid img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 1122 / 1402;
+    object-fit: contain;
+    object-position: center;
     border-radius: inherit;
+    background: var(--canvas);
 }
 .highlights-grid figcaption {
     display: grid;
@@ -155,6 +158,11 @@ details[open] > .catalog-row::after { content: "−"; }
 }
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .highlights-grid figure {
+        position: relative;
+        transform-origin: center;
+        transition: transform .45s ease;
+    }
     .highlights-grid a {
         transform: translateY(.85rem);
         border-radius: .9rem;
@@ -172,6 +180,10 @@ details[open] > .catalog-row::after { content: "−"; }
         height: 2px;
         border-radius: 1px;
         background: var(--blue);
+    }
+    .highlights-grid figure:is(:hover, :focus-within) {
+        z-index: 2;
+        transform: scale(1.1);
     }
     .highlights-grid figure:is(:hover, :focus-within) a {
         transform: translateY(0);
