@@ -38,3 +38,24 @@ document.addEventListener("keydown", (event) => {
 
 mobileLayout.addEventListener("change", syncNavigation);
 syncNavigation();
+
+const appSelector = document.querySelector(".app-selector");
+const appScreen = document.getElementById("console-screen");
+const appLink = document.getElementById("console-link");
+const appButtons = appSelector.querySelectorAll("button");
+
+appSelector.hidden = false;
+appSelector.addEventListener("click", (event) => {
+    const selected = event.target.closest("button");
+    if (!selected) return;
+
+    for (const button of appButtons) {
+        button.setAttribute("aria-pressed", String(button === selected));
+    }
+
+    const appName = selected.textContent.trim();
+    appScreen.src = selected.dataset.appImage;
+    appScreen.alt = `${appName} app screenshot`;
+    appLink.href = selected.dataset.appTarget;
+    appLink.textContent = `Explore ${appName}`;
+});

@@ -3,7 +3,7 @@
     .hero-copy { max-width: 38rem; }
     .case-art { width: min(100%, 33rem); justify-self: center; }
     .case-intro { grid-template-columns: 1fr; }
-    .hero-portrait { width: min(85%, 20rem); }
+    .app-console { width: min(100%, 34rem); justify-self: center; }
 }
 
 @media (max-width: 40rem) {

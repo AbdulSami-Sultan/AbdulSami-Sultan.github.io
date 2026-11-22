@@ -10,7 +10,7 @@
     <title>Abdul Sami Sultan — Senior iOS Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
     <script src="script.js" defer></script>
@@ -24,7 +24,7 @@
             <div class="nav-links" id="site-links">
                 <a href="#case-study">Work</a>
                 <a href="#about">About</a>
-                <a href="Resume/Abdul_Sami_Sultan_Resume.pdf">Résumé</a>
+                <a href="#work-experience">Experience</a>
                 <a class="btn btn-ghost nav-contact" href="#contact">Work with me</a>
             </div>
         </nav>
@@ -34,20 +34,37 @@
             <div class="hero-copy">
                 <p class="section-label">Senior iOS Engineer</p>
                 <h1 id="hero-title">Abdul Sami <em>Sultan.</em></h1>
-                <p class="hero-description">I build native apps for iPhone, iPad, and Mac, from VPN and security tools to consumer apps.</p>
+                <p class="hero-description">I build native apps across Apple platforms, from VPN and cybersecurity products to enterprise and consumer apps.</p>
                 <div class="hero-actions">
                     <a class="btn btn-primary" href="#case-study">Explore my work</a>
-                    <a class="text-link" href="Resume/Abdul_Sami_Sultan_Resume.pdf">View résumé</a>
+                    <a class="text-link" href="mailto:abdulsami.sultan.ask@gmail.com?subject=R%C3%A9sum%C3%A9%20request">Request résumé</a>
                 </div>
+                <p class="hero-location">Based in Rome, Italy</p>
                 <ul class="hero-socials" aria-label="Find me online">
                     <li><a href="https://www.linkedin.com/in/abdulsami-sultan/">LinkedIn</a></li>
                     <li><a href="https://github.com/abdulsami-sultan">GitHub</a></li>
                     <li><a href="https://medium.com/@abdulsami923">Medium</a></li>
                 </ul>
             </div>
-            <figure class="hero-portrait">
-                <img src="Portrait/Abdul_Sami_Sultan.jpeg" width="400" height="400" alt="Abdul Sami Sultan">
-            </figure>
+            <div class="app-console" aria-label="Interactive project preview">
+                <div class="console-sidebar">
+                    <figure class="hero-portrait">
+                        <img src="Portrait/Abdul_Sami_Sultan.jpeg" width="400" height="400" alt="Abdul Sami Sultan">
+                    </figure>
+                    <div class="app-selector" role="group" aria-label="Choose an app" hidden>
+                        <button type="button" aria-pressed="true" data-app-image="assets/Taleemabad/Taleemabad%20-%20grade%20selection.jpeg" data-app-target="#case-study">Taleemabad</button>
+                        <button type="button" aria-pressed="false" data-app-image="assets/OysterVPN/OysterVPN%20-%20Dashboard%20connected.jpeg" data-app-target="#oystervpn">OysterVPN</button>
+                        <button type="button" aria-pressed="false" data-app-image="assets/AbbApp%20Quiz%20Game/AbbApp%20Quiz%20Game%20-%20Dashboard.jpeg" data-app-target="#abb-quiz">ABB Quiz</button>
+                        <button type="button" aria-pressed="false" data-app-image="assets/Saasta%20Tareen/Saasta%20Tareen%20-%20Dashboard.jpeg" data-app-target="#sasta-tareen">Sasta Tareen</button>
+                    </div>
+                </div>
+                <div class="console-preview">
+                    <div class="console-phone">
+                        <img id="console-screen" src="assets/Taleemabad/Taleemabad%20-%20grade%20selection.jpeg" width="300" height="649" alt="Taleemabad app screenshot">
+                    </div>
+                    <a class="text-link" id="console-link" href="#case-study" aria-live="polite">Explore Taleemabad</a>
+                </div>
+            </div>
         </section>
 
         <section id="case-study" class="case-study" aria-labelledby="case-title">
@@ -58,7 +75,10 @@
                         <h2 class="title" id="case-title">Taleemabad</h2>
                         <p class="case-summary">An iOS learning app for students in Grades 1–5, with video lessons, quizzes, and scores.</p>
                         <p>I contributed to the native iOS app during my internship at Orenda Project. My work included refactoring Swift code for readability and maintainability.</p>
-                        <a class="text-link" href="#app-screens">View app screens</a>
+                        <div class="case-links">
+                            <a class="text-link" href="#app-screens">View app screens</a>
+                            <a class="text-link" href="https://apps.apple.com/pk/app/taleemabad-learning-app/id1573435969">App Store</a>
+                        </div>
                     </div>
                     <div class="case-art">
                         <img loading="lazy" class="phone phone-left" src="assets/Taleemabad/Taleemabad%20-%20mcq%201.jpeg" width="300" height="649" alt="Taleemabad multiple-choice quiz">
@@ -87,7 +107,7 @@
             <p class="section-label">Mobile and web development</p>
             <h2 class="title">More projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" id="abb-quiz">
                     <img src="assets/Project%20Catalog/project1.png" alt="ABB Quiz App" class="project-img" loading="lazy">
                     <div class="project-info">
                         <h3 class="project-name">ABB Quiz App</h3>
@@ -97,9 +117,16 @@
                             <span class="tech-tag">Firebase</span>
                         </div>
                         <a class="btn btn-primary project-btn" href="https://apps.apple.com/us/app/abb-quiz-app/id1538281636">App Store</a>
+                        <details class="project-gallery">
+                            <summary>App screenshots</summary>
+                            <div>
+                                <a href="assets/AbbApp%20Quiz%20Game/AbbApp%20Quiz%20Game%20-%20Game%20play%201.jpeg"><img src="assets/AbbApp%20Quiz%20Game/AbbApp%20Quiz%20Game%20-%20Game%20play%201.jpeg" alt="Quiz gameplay" loading="lazy"></a>
+                                <a href="assets/AbbApp%20Quiz%20Game/AbbApp%20Quiz%20Game%20-%20Multiplayer%20Menu.jpeg"><img src="assets/AbbApp%20Quiz%20Game/AbbApp%20Quiz%20Game%20-%20Multiplayer%20Menu.jpeg" alt="Multiplayer menu" loading="lazy"></a>
+                            </div>
+                        </details>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" id="oystervpn">
                     <img src="assets/Project%20Catalog/project2.png" alt="OysterVPN" class="project-img" loading="lazy">
                     <div class="project-info">
                         <h3 class="project-name">OysterVPN</h3>
@@ -109,6 +136,13 @@
                             <span class="tech-tag">MVVM</span>
                         </div>
                         <a class="btn btn-primary project-btn" href="https://apps.apple.com/ca/app/oystervpn-secure-and-fast-vpn/id1639558080">App Store</a>
+                        <details class="project-gallery">
+                            <summary>App screenshots</summary>
+                            <div>
+                                <a href="assets/OysterVPN/OysterVPN%20-%20Dashboard%20connected.jpeg"><img src="assets/OysterVPN/OysterVPN%20-%20Dashboard%20connected.jpeg" alt="Connected dashboard" loading="lazy"></a>
+                                <a href="assets/OysterVPN/OysterVPN%20-%20VPN%20Protocol%20Selection.jpeg"><img src="assets/OysterVPN/OysterVPN%20-%20VPN%20Protocol%20Selection.jpeg" alt="VPN protocol selection" loading="lazy"></a>
+                            </div>
+                        </details>
                     </div>
                 </div>
                 <div class="project-card">
@@ -119,6 +153,7 @@
                             <span class="tech-tag">Swift</span>
                             <span class="tech-tag">UIKit</span>
                         </div>
+                        <a class="btn btn-primary project-btn" href="https://apps.apple.com/us/app/sanatkar/id1527036667">App Store</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -130,6 +165,27 @@
                             <span class="tech-tag">Firebase</span>
                         </div>
                         <a class="btn btn-ghost project-btn" href="https://github.com/AbdulSami-Sultan/Social-Media-App">GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card" id="sasta-tareen">
+                    <img src="assets/sasta%20tareen/image_01.png" alt="Sasta Tareen app preview" class="project-img" loading="lazy">
+                    <div class="project-info">
+                        <h3 class="project-name">Sasta Tareen</h3>
+                        <p class="project-description">Grocery price comparison app.</p>
+                        <a class="btn btn-primary project-btn" href="https://apps.apple.com/in/app/sasta-tareen/id6457362264">App Store</a>
+                        <details class="project-gallery">
+                            <summary>App screenshots</summary>
+                            <div>
+                                <a href="assets/Saasta%20Tareen/Saasta%20Tareen%20-%20Item%20Comparing%20Chart.jpeg"><img src="assets/Saasta%20Tareen/Saasta%20Tareen%20-%20Item%20Comparing%20Chart.jpeg" alt="Price comparison chart" loading="lazy"></a>
+                                <a href="assets/Saasta%20Tareen/Saasta%20Tareen%20-%20Shopping%20Cart.jpeg"><img src="assets/Saasta%20Tareen/Saasta%20Tareen%20-%20Shopping%20Cart.jpeg" alt="Shopping cart" loading="lazy"></a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <div class="project-card" id="usa-wholesale">
+                    <div class="project-info">
+                        <h3 class="project-name">USA Wholesale</h3>
+                        <a class="btn btn-primary project-btn" href="https://apps.apple.com/us/app/usa-wholesale/id1189929519">App Store</a>
                     </div>
                 </div>
             </div>
@@ -147,14 +203,14 @@
                 <div class="details-container">
                     <img src="assets/icons/education.png" alt="Education" class="icon stat-icon">
                     <h3>Education</h3>
-                    <p>BSc CS · DHA Suffa University<br><br>MSc CS · IBA Karachi<br>CGPA 3.2</p>
+                    <p>ICT and Internet Engineering · University of Rome Tor Vergata · In progress<br><br>BSc Computer Science · DHA Suffa University</p>
                 </div>
             </div>
             <div class="text-container">
-                <p>5+ years building high-impact iOS apps used by millions — from VPN &amp; cybersecurity platforms to consumer apps. At SpurSol I lead mobile development and architect scalable solutions. Previously at Disrupt.com (Gaditek), I worked on IvacyVPN and PureVPN — enterprise VPN products with 6,500+ servers across 71+ countries.</p>
+                <p>I’m a Senior iOS Software Engineer with 5+ years of experience building and maintaining native Apple-platform apps. At SpurSol I led iOS development for Connect by VL. At Disrupt.com and PureSquare I worked on PureVPN, including connection reliability and a macOS security feature. I’m now based in Rome and studying ICT and Internet Engineering at Tor Vergata.</p>
             </div>
             <div class="about-links">
-                <a class="btn btn-primary" href="Resume/Abdul_Sami_Sultan_Resume.pdf">View résumé</a>
+                <a class="btn btn-primary" href="mailto:abdulsami.sultan.ask@gmail.com?subject=R%C3%A9sum%C3%A9%20request">Request résumé</a>
                 <a class="text-link" href="https://github.com/abdulsami-sultan">GitHub</a>
                 <a class="text-link" href="https://medium.com/@abdulsami923">Medium</a>
             </div>
@@ -200,41 +256,35 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
-                        <h3 class="job-title">Senior Software Engineer</h3>
-                        <p class="job-company">SpurSol &middot; Full-time</p>
-                        <p class="job-date">Jul 2025 &ndash; Present &middot; Karachi, On-site</p>
+                        <h3 class="job-title">Senior Software Engineer, iOS</h3>
+                        <p class="job-company">SpurSol</p>
+                        <p class="job-date">Jul 2025 – Sep 2026 · Karachi</p>
                         <ul class="job-bullets">
-                            <li>Led mobile development team, driving innovation and efficiency in project execution.</li>
-                            <li>Implemented CI/CD pipeline to automate deployment, significantly enhancing productivity.</li>
-                            <li>Leveraged AI tooling (Claude Code) to accelerate the development cycle.</li>
-                            <li>Contributed to SpurSol's growth as a startup delivering cutting-edge software solutions.</li>
+                            <li>Led iOS development and technical delivery for Connect by VL, an enterprise mobile platform.</li>
+                            <li>Maintained Swift applications, reviewed code, and managed Azure DevOps CI/CD pipelines.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
-                        <h3 class="job-title">Senior Software Engineer &mdash; iOS</h3>
-                        <p class="job-company">Disrupt.com (Gaditek) &middot; Full-time</p>
-                        <p class="job-date">Jan 2024 &ndash; Jun 2025 &middot; 1 yr 6 mos &middot; Karachi, On-site</p>
+                        <h3 class="job-title">Senior Software Engineer, iOS</h3>
+                        <p class="job-company">Disrupt.com (Gaditek) / PureSquare</p>
+                        <p class="job-date">Sep 2022 – Jun 2025 · Karachi</p>
                         <ul class="job-bullets">
-                            <li>Designed, built and shipped features for IvacyVPN on iOS and macOS platforms.</li>
-                            <li>Collaborated with Product team to ideate and implement innovative features.</li>
-                            <li>Developed comprehensive unit test coverage for reliability and edge cases.</li>
-                            <li>Enforced Clean Code Practices and Swift Style Guidelines.</li>
-                            <li><em>Stack: AtomSDK &middot; Network Extension &middot; Auto Layout &middot; MVVM</em></li>
+                            <li>Developed and maintained PureVPN across Apple platforms, improving connection reliability and app stability.</li>
+                            <li>Implemented a dark web security feature for macOS and used unit tests to reduce regressions.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
-                        <h3 class="job-title">Software Engineer &mdash; iOS</h3>
-                        <p class="job-company">PureSquare / Disrupt.com (Gaditek) &middot; Full-time</p>
-                        <p class="job-date">Sep 2022 &ndash; Apr 2024 &middot; 1 yr 8 mos &middot; Karachi, On-site</p>
+                        <h3 class="job-title">Software Engineer, iOS</h3>
+                        <p class="job-company">Salsoft Technologies</p>
+                        <p class="job-date">Feb 2022 – Aug 2022 · Karachi</p>
                         <ul class="job-bullets">
-                            <li>Owned iOS feature delivery for PureVPN &mdash; 6,500+ servers across 71+ countries.</li>
-                            <li>Built and fixed app features within the Cyber Security department at PureSquare.</li>
+                            <li>Built native iOS interfaces and reusable Network Extension modules supporting IKEv2, IPsec, and OpenVPN.</li>
                         </ul>
                     </div>
                 </div>
@@ -242,38 +292,43 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
                         <h3 class="job-title">iOS Developer</h3>
-                        <p class="job-company">Salsoft Technologies &middot; Full-time</p>
-                        <p class="job-date">Feb 2022 &ndash; Aug 2022 &middot; 7 mos &middot; Karachi</p>
+                        <p class="job-company">Novatex Limited</p>
+                        <p class="job-date">Aug 2021 – Jan 2022 · Karachi</p>
                         <ul class="job-bullets">
-                            <li>Built OysterVPN for iOS and macOS using Apple Network Extension.</li>
-                            <li>Integrated VPN protocols: IPSec, IKEv2, OpenVPN (TCP/UDP).</li>
+                            <li>Helped maintain Sasta Tareen and improved app performance and responsive layouts.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
-                        <h3 class="job-title">iOS Developer</h3>
-                        <p class="job-company">Novatex Limited &middot; Full-time</p>
-                        <p class="job-date">Aug 2021 &ndash; Jan 2022 &middot; 6 mos &middot; Karachi, On-site</p>
+                        <h3 class="job-title">iOS Developer Intern</h3>
+                        <p class="job-company">Orenda</p>
+                        <p class="job-date">Oct 2020 – Jul 2021 · Islamabad</p>
                         <ul class="job-bullets">
-                            <li>Maintained Sasta Tareen &mdash; Pakistan's first price-comparison grocery app (18,000+ products).</li>
-                            <li>Implemented new features with Swift and UIKit, improving stability and UX.</li>
+                            <li>Contributed to Taleemabad through native app development, code reviews, debugging, and Auto Layout.</li>
                         </ul>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <h3 class="job-title">iOS Developer &mdash; Intern</h3>
-                        <p class="job-company">Orenda Project &middot; Part-time, Remote</p>
-                        <p class="job-date">Jan 2021 &ndash; Jul 2021 &middot; 7 mos</p>
-                        <ul class="job-bullets">
-                            <li>Contributed to Taleemabad Learning App, a native iOS e-learning platform.</li>
-                            <li>Applied Swift best practices and refactored for readability and maintainability.</li>
-                        </ul>
-                    </div>
-                </div>
+            </div>
+            <h3 class="highlights-title">Career highlights</h3>
+            <div class="highlights-grid">
+                <figure>
+                    <a href="Portrait/Gaditek%20-%20Promotion%20%28Software%20Engineer%20to%20Senior%20Software%20Engineer.JPG"><img src="Portrait/Gaditek%20-%20Promotion%20%28Software%20Engineer%20to%20Senior%20Software%20Engineer.JPG" alt="Promotion to Senior Software Engineer at Gaditek" loading="lazy"></a>
+                    <figcaption>Promotion to Senior Software Engineer at Gaditek</figcaption>
+                </figure>
+                <figure>
+                    <a href="Portrait/Gaditek%20Team%20Group%20Photo.JPG"><img src="Portrait/Gaditek%20Team%20Group%20Photo.JPG" alt="With the Gaditek team" loading="lazy"></a>
+                    <figcaption>With the Gaditek team</figcaption>
+                </figure>
+                <figure>
+                    <a href="Portrait/Spursol%20Leaving%20Final%20Day%20Photo.PNG"><img src="Portrait/Spursol%20Leaving%20Final%20Day%20Photo.PNG" alt="My last day at SpurSol" loading="lazy"></a>
+                    <figcaption>My last day at SpurSol</figcaption>
+                </figure>
+                <figure>
+                    <a href="Portrait/Reply%20-%20Student%20Clash%20Event%20-%20AI%20on%20Campus.jpeg"><img src="Portrait/Reply%20-%20Student%20Clash%20Event%20-%20AI%20on%20Campus.jpeg" alt="Reply Student Clash · AI on Campus" loading="lazy"></a>
+                    <figcaption>Reply Student Clash · AI on Campus</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -283,7 +338,7 @@
             <div class="contact-card">
                 <div class="contact-row">
                     <img src="assets/icons/email.png" alt="Email" class="icon contact-icon">
-                    <a href="mailto:abdulsami923@gmail.com">abdulsami923@gmail.com</a>
+                    <a href="mailto:abdulsami.sultan.ask@gmail.com">abdulsami.sultan.ask@gmail.com</a>
                 </div>
                 <div class="contact-divider"></div>
                 <div class="contact-row">
