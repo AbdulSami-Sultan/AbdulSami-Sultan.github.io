@@ -133,16 +133,14 @@ details[open] > .catalog-row::after { content: "−"; }
 .highlights-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .85rem; }
 .highlights-grid figure {
     display: grid;
-    grid-template-rows: auto 1fr;
+    align-self: start;
     isolation: isolate;
 }
 .highlights-grid a { position: relative; z-index: 1; display: block; border-radius: .9rem .9rem 0 0; }
 .highlights-grid img {
     width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: contain;
+    height: auto;
     border-radius: inherit;
-    background: var(--canvas);
 }
 .highlights-grid figcaption {
     display: grid;
