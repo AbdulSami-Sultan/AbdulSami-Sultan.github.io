@@ -1,10 +1,12 @@
 @media (max-width: 60rem) {
     .nav-links { gap: .85rem; }
     .hero { gap: 2rem; }
-    .toolkit-grid, .highlights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .toolkit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .highlights-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (max-width: 40rem) {
+    .highlights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .shell { width: calc(100% - 2rem); }
     .nav-bar { flex-wrap: wrap; min-height: 3.5rem; }
     .nav-links { width: 100%; align-items: flex-start; }

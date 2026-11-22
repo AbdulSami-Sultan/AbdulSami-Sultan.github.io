@@ -54,11 +54,12 @@ section[id], article[id], #app-screens { scroll-margin-top: 1.25rem; }
 .hero-description { margin-top: 1.65rem; max-width: 31rem; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.9rem; }
 .hero-stack { margin-top: 2.6rem; }
-.hero-showcase { display: grid; justify-items: center; gap: 1.4rem; padding: clamp(1.4rem, 3vw, 2rem); background: var(--lilac); color: #2c4389; border-radius: 2rem; }
-.hero-showcase .section-label { color: inherit; justify-self: start; }
-.hero-showcase figcaption { font-size: .875rem; font-weight: 500; text-align: center; }
-.device { display: block; width: min(100%, 16rem); aspect-ratio: 9 / 16; overflow: hidden; border: .45rem solid #192033; border-radius: 2rem; background: #fff; }
-.device img { width: 100%; height: 100%; object-fit: cover; }
+.hero-showcase { display: grid; gap: 1.25rem; padding: clamp(1.25rem, 3vw, 2rem); background: var(--lilac); color: #2c4389; border-radius: 2rem; }
+.hero-portrait { width: min(100%, 18rem); justify-self: center; border-radius: 1.25rem; }
+.hero-bio .section-label { color: inherit; }
+.hero-bio h2 { margin-top: .25rem; color: var(--ink); font-size: clamp(1.35rem, 2.5vw, 1.8rem); line-height: 1.2; }
+.hero-bio > p:not(.section-label) { margin-top: .6rem; }
+.hero-bio .text-link { display: inline-block; margin-top: .75rem; }
 .principles { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem 2rem; align-items: center; margin-bottom: 3rem; padding: clamp(1.25rem, 3vw, 2rem); background: #eaedfb; border-radius: 1.25rem; color: #263a86; }
 .principles h2 { margin-top: .5rem; font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.15; font-weight: 500; }
 .principles h3 { font-size: .85rem; }
@@ -130,7 +131,7 @@ details[open] > .catalog-row::after { content: "−"; }
 .process-layout h3 { font-size: 1rem; }
 .process-layout p:not(.section-label) { margin-top: .55rem; color: var(--muted); }
 .highlights-band { background: #eaeee6; }
-.highlights-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .85rem; }
+.highlights-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .85rem; }
 .highlights-grid figure {
     display: grid;
     align-self: start;
