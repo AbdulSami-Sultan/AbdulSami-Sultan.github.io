@@ -152,12 +152,14 @@ The portfolio also includes a Google Tag Manager container. If Firebase Analytic
 
 | Event | When it fires |
 |---|---|
-| `section_tap` | An in-page link is activated |
-| `resume_download` | The public résumé download link is activated |
-| `photo_view` | A project screenshot or career photo is opened |
-| `contact_section_view`, `experience_view`, `catalog_view` | The corresponding section heading comes into view |
-| `career_highlights_view` | The career highlights heading comes into view |
-| `testimonial_view` | A heading inside a future `#testimonials` section comes into view |
-| `medium_section_view`, `medium_open` | The writing section is seen, or a link to Medium is activated |
+| `section_view` | At least half of a section heading is visible for the first time on a page load. Existing section-specific events remain available. |
+| `section_tap`, `menu_toggle` | A visitor follows an in-page link or uses the mobile menu button. |
+| `portfolio_scroll_depth` | The visitor reaches 25%, 50%, 75%, or 100% scroll depth. |
+| `featured_project_view`, `project_gallery_view`, `case_study_view` | A featured project, project gallery, or catalog entry becomes visible. |
+| `project_catalog_tap`, `case_study_open`, `project_filter_select`, `project_screens_expand` | A visitor activates a catalog row, opens a case study, selects a filter, or reveals more screenshots. |
+| `resume_download`, `photo_view`, `app_store_click` | A visitor activates a résumé, photo, screenshot, or App Store link. |
+| `article_preview_view`, `medium_open` | A writing card becomes visible or a visitor opens a Medium link. |
+| `portfolio_outbound_click` | A visitor activates another external HTTPS link. The event includes its hostname. |
+| `contact_email_click`, `contact_form_start`, `contact_draft_open` | A visitor activates the email link, starts editing the enquiry form, or submits it to open an email draft. |
 
-Section views are logged once per page load. Medium reads are measured on Medium itself.
+Use `section_view` for a single cross-section report. For GA4 reports that break events down by parameters, register dimensions such as `section_id`, `project_id`, `article_id`, and `placement_id`. Contact events omit form values and email addresses. Medium reads are measured on Medium itself.
