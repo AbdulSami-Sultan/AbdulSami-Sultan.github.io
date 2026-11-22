@@ -147,3 +147,19 @@ I'm always happy to chat about iOS development, architecture patterns, VPN tech,
 Copy `.env.example` to `.env` and fill in the values from the Firebase web app config. Run `node generate-firebase-config.mjs` with Node.js 22 or newer after changing the values.
 
 Include `firebase-config.generated.js` in the published site files to enable Analytics. Keep `.env` outside the published files. The generated module is public browser configuration and should contain only Firebase web app settings. Both files are ignored by Git. GitHub Pages deployments from a branch need a build or upload step to include the generated module.
+
+The portfolio also includes a Google Tag Manager container. If Firebase Analytics is unavailable, the site puts the custom events on the Tag Manager data layer. In Tag Manager, configure a Custom Event trigger and a GA4 Event tag to forward each event you want to collect.
+
+| Event | When it fires |
+|---|---|
+| `section_view` | At least half of a section heading is visible for the first time on a page load. Existing section-specific events remain available. |
+| `section_tap`, `menu_toggle` | A visitor follows an in-page link or uses the mobile menu button. |
+| `portfolio_scroll_depth` | The visitor reaches 25%, 50%, 75%, or 100% scroll depth. |
+| `featured_project_view`, `project_gallery_view`, `case_study_view` | A featured project, project gallery, or catalog entry becomes visible. |
+| `project_catalog_tap`, `case_study_open`, `project_filter_select`, `project_screens_expand` | A visitor activates a catalog row, opens a case study, selects a filter, or reveals more screenshots. |
+| `resume_download`, `photo_view`, `app_store_click` | A visitor activates a résumé, photo, screenshot, or App Store link. |
+| `article_preview_view`, `medium_open` | A writing card becomes visible or a visitor opens a Medium link. |
+| `portfolio_outbound_click` | A visitor activates another external HTTPS link. The event includes its hostname. |
+| `contact_email_click`, `contact_form_start`, `contact_draft_open` | A visitor activates the email link, starts editing the enquiry form, or submits it to open an email draft. |
+
+Use `section_view` for a single cross-section report. For GA4 reports that break events down by parameters, register dimensions such as `section_id`, `project_id`, `article_id`, and `placement_id`. Contact events omit form values and email addresses. Medium reads are measured on Medium itself.

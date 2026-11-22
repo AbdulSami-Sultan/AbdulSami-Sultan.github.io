@@ -39,53 +39,54 @@ document.addEventListener("keydown", (event) => {
 mobileLayout.addEventListener("change", syncNavigation);
 syncNavigation();
 
-const appSelector = document.querySelector(".app-selector");
-const appScreen = document.getElementById("console-screen");
-const appLink = document.getElementById("console-link");
-const appButtons = appSelector.querySelectorAll("button");
+const filters = document.querySelector(".catalog-filters");
+const projects = document.querySelectorAll(".catalog .case-card");
 
-appSelector.hidden = false;
-appSelector.addEventListener("click", (event) => {
-    const selected = event.target.closest("button");
-    if (!selected) return;
-
-    for (const button of appButtons) {
-        button.setAttribute("aria-pressed", String(button === selected));
+function filterProjects(filter) {
+    for (const project of projects) {
+        project.hidden = filter === "ios" && project.dataset.projectPlatform === "cross-platform";
     }
+    for (const button of filters.querySelectorAll("button")) {
+        button.setAttribute("aria-pressed", String(button.dataset.filter === filter));
+    }
+}
 
-    const appName = selected.textContent.trim();
-    appScreen.src = selected.dataset.appImage;
-    appScreen.alt = `${appName} app screenshot`;
-    appLink.href = selected.dataset.appTarget;
-    appLink.textContent = `Explore ${appName}`;
+filters.hidden = false;
+filters.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-filter]");
+    if (button) filterProjects(button.dataset.filter);
 });
 
-const accentToggle = document.querySelector(".accent-toggle");
-accentToggle.hidden = false;
-accentToggle.addEventListener("click", () => {
-    const warm = document.documentElement.classList.toggle("warm-accent");
-    accentToggle.setAttribute("aria-pressed", String(warm));
+function expandProject(id) {
+    const project = document.getElementById(id);
+    if (!project?.classList.contains("case-card")) return;
+    const details = project.querySelector("details");
+    if (!details) return;
+    if (project.hidden) filterProjects("all");
+    details.open = true;
+}
+
+function openLinkedProject() {
+    expandProject(window.location.hash.slice(1));
+}
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", () => {
+        expandProject(link.hash.slice(1));
+    });
 });
+window.addEventListener("hashchange", openLinkedProject);
+openLinkedProject();
 
 const enquiry = document.getElementById("enquiry-form");
 enquiry.hidden = false;
-document.querySelectorAll("[data-project]").forEach((link) => {
-    link.addEventListener("click", () => {
-        enquiry.elements.namedItem("project").value = link.dataset.project;
-    });
-});
-
 enquiry.addEventListener("submit", (event) => {
     event.preventDefault();
     const details = new FormData(enquiry);
-    const subject = `iOS enquiry: ${details.get("project")}`;
+    const subject = String(details.get("subject")).trim();
     const body = [
         `Name: ${details.get("name")}`,
         `Email: ${details.get("email")}`,
-        `Company: ${details.get("company") || "—"}`,
-        `Platform: ${details.get("platform")}`,
-        `Timeline: ${details.get("timeline") || "—"}`,
-        `Budget: ${details.get("budget") || "—"}`,
         "",
         details.get("message"),
     ].join("\n");

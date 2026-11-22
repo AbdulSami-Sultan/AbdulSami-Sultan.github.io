@@ -1,23 +1,35 @@
-@media (max-width: 54rem) {
-    .hero { grid-template-columns: 1fr; min-height: auto; gap: 2rem; padding-top: 2.75rem; }
-    .hero-copy { max-width: 38rem; }
-    .case-card, .contact-layout { grid-template-columns: 1fr; }
-    .app-console { width: min(100%, 34rem); justify-self: center; }
+@media (max-width: 60rem) {
+    .nav-links { gap: .85rem; }
+    .hero { gap: 2rem; }
+    .toolkit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .highlights-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (max-width: 40rem) {
+    .writing-card a { grid-template-columns: 1fr; }
+    .writing-card img { aspect-ratio: 320 / 214; height: auto; }
+    .highlights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .shell { width: calc(100% - 2rem); }
-    .nav-bar { flex-wrap: wrap; }
-    .nav-links { width: 100%; align-items: flex-start; gap: .75rem; }
-    .nav-links a { min-height: 2.75rem; display: inline-flex; align-items: center; }
-    .nav-links.is-enhanced { flex-direction: column; border-top: 1px solid var(--line); padding-top: .75rem; }
-    .hero h1 { font-size: clamp(2.6rem, 11vw, 4.25rem); }
-    .hero-actions, .about-links { column-gap: 1rem; }
-    .screen-grid { gap: .5rem; }
-    .screen-grid figure { padding: .5rem; }
-    .screen-grid figcaption { font-size: .8125rem; line-height: 1.35; }
-    .projects-grid, .skills-grid, .about-containers, .proof-facts, .offer-grid, .enquiry-grid { grid-template-columns: 1fr; }
-    .footer-inner { align-items: flex-start; flex-direction: column; }
+    .nav-bar { flex-wrap: wrap; min-height: 3.5rem; }
+    .nav-links { width: 100%; align-items: flex-start; }
+    .nav-links.is-enhanced { flex-direction: column; border-top: 1px solid var(--line); padding-top: .8rem; }
+    .nav-links > a:not(.btn) { display: inline-flex; min-height: 2.75rem; align-items: center; }
+    .hero, .principles, .featured-grid, .about-layout, .contact-panel, .case-content, .experience-row { grid-template-columns: 1fr; }
+    .hero h1 { font-size: clamp(2.65rem, 10.5vw, 4.15rem); }
+    .hero-stack { margin-top: 1.35rem; }
+    .section-heading { align-items: start; flex-direction: column; }
+    .catalog-labels { display: none; }
+    .catalog-intro { margin-bottom: 1rem; }
+    .catalog-row { grid-template-columns: minmax(0, 1fr) auto; gap: .25rem .7rem; }
+    .catalog-row::after { grid-area: 1 / 2; justify-self: end; }
+    .catalog-stack { grid-column: 1; }
+    .catalog-status { grid-column: 2; justify-self: end; }
+    .process-layout { grid-template-columns: 1fr; }
+    .process-layout > div:not(:first-child) { padding-top: 0; }
+}
+
+@media (max-width: 24rem) {
+    .enquiry-grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
