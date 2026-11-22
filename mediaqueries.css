@@ -1,72 +1,25 @@
-/* ─── Tablet (≤1200px) ───────────────────────────────────────── */
-@media screen and (max-width: 1200px) {
-  #desktop-nav  { display: none; }
-  #hamburger-nav { display: flex; }
-
-  section { padding: 5rem 2rem 3rem; }
-
-  #profile {
-    flex-direction: column;
-    gap: 2.5rem;
-    padding-top: 7rem;
-    text-align: center;
-    min-height: auto;
-  }
-
-  .profile-pic-ring { width: 220px; height: 220px; }
-
-  .section-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .about-pic { width: 260px; }
-
-  .skills-grid { flex-direction: column; }
-
-  .arrow { display: none; }
-
-  footer { padding: 2rem 1.5rem; }
-  footer .nav-links { gap: 1.25rem; flex-wrap: wrap; justify-content: center; }
+@media (max-width: 54rem) {
+    .hero { grid-template-columns: 1fr; min-height: auto; gap: 2rem; padding-top: 2.75rem; }
+    .hero-copy { max-width: 38rem; }
+    .case-card, .contact-layout { grid-template-columns: 1fr; }
+    .app-console { width: min(100%, 34rem); justify-self: center; }
 }
 
-/* ─── Mobile (≤768px) ────────────────────────────────────────── */
-@media screen and (max-width: 768px) {
-  section { padding: 4.5rem 1.25rem 2.5rem; }
-
-  nav { padding: 0 1.25rem; }
-
-  .title { font-size: 2rem; margin-bottom: 2rem; }
-
-  .profile-pic-ring { width: 180px; height: 180px; }
-
-  .profile-tagline { gap: 0.4rem; }
-
-  .btn-container { flex-direction: column; align-items: center; gap: 0.6rem; }
-  .btn { width: 100%; max-width: 240px; text-align: center; }
-
-  .about-containers { flex-direction: column; }
-
-  .about-pic { width: 220px; }
-
-  .projects-grid { grid-template-columns: 1fr; }
-
-  .contact-card { min-width: unset; width: 100%; }
-
-  .timeline { padding-left: 1.75rem; }
-  .timeline-dot { left: -1.75rem; }
-
-  footer .nav-links { gap: 1rem; }
+@media (max-width: 40rem) {
+    .shell { width: calc(100% - 2rem); }
+    .nav-bar { flex-wrap: wrap; }
+    .nav-links { width: 100%; align-items: flex-start; gap: .75rem; }
+    .nav-links a { min-height: 2.75rem; display: inline-flex; align-items: center; }
+    .nav-links.is-enhanced { flex-direction: column; border-top: 1px solid var(--line); padding-top: .75rem; }
+    .hero h1 { font-size: clamp(2.6rem, 11vw, 4.25rem); }
+    .hero-actions, .about-links { column-gap: 1rem; }
+    .screen-grid { gap: .5rem; }
+    .screen-grid figure { padding: .5rem; }
+    .screen-grid figcaption { font-size: .8125rem; line-height: 1.35; }
+    .projects-grid, .skills-grid, .about-containers, .proof-facts, .offer-grid, .enquiry-grid { grid-template-columns: 1fr; }
+    .footer-inner { align-items: flex-start; flex-direction: column; }
 }
 
-/* ─── Small mobile (≤480px) ──────────────────────────────────── */
-@media screen and (max-width: 480px) {
-  .logo { font-size: 0.95rem; }
-  .section__text__p2 { font-size: 1.1rem; }
-  .title { font-size: 1.75rem; }
-  .profile-pic-ring { width: 150px; height: 150px; }
-  .skills-card { padding: 1.25rem; }
-  .timeline-card { padding: 1rem 1.1rem; }
-  .job-title { font-size: 0.95rem; }
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
 }

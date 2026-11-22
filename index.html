@@ -1,308 +1,550 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Abdul Sami Sultan — Senior iOS Engineer with 5+ years building high-impact apps in Swift, SwiftUI, UIKit, and MVVM.">
-    <meta name="keywords" content="iOS Developer, Senior iOS Engineer, Swift, SwiftUI, UIKit, MVVM, Karachi, Mobile Developer, VPN">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Abdul Sami Sultan is a Senior iOS Engineer building native apps for iPhone, iPad, and Mac. Explore his work in VPN, security, and consumer apps.">
     <meta property="og:title" content="Abdul Sami Sultan — Senior iOS Engineer">
-    <meta property="og:description" content="5+ years building high-impact iOS apps used by millions — VPN & cybersecurity platforms to consumer apps.">
+    <meta property="og:description" content="Native apps for iPhone, iPad, and Mac, from VPN and security tools to consumer products.">
     <meta property="og:image" content="./Portrait/Abdul_Sami_Sultan.jpeg">
     <title>Abdul Sami Sultan — Senior iOS Engineer</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <script src="script.js" defer></script>
+    <script type="module" src="analytics.js"></script>
 </head>
-<body>
-    <!-- DESKTOP NAV -->
-    <nav id="desktop-nav">
-        <div class="logo">Abdul Sami Sultan</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Skills</a></li>
-            <li><a href="#work-experience">Work</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <!-- MOBILE NAV -->
-    <nav id="hamburger-nav">
-        <div class="logo">Abdul Sami Sultan</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span><span></span><span></span>
+<body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <nav class="shell nav-bar" aria-label="Main navigation">
+            <a class="brand" href="#top"><span class="monogram" aria-hidden="true">SS</span> Sami Sultan</a>
+            <button type="button" class="menu-toggle btn btn-ghost" aria-expanded="false" aria-controls="site-links" hidden>Menu</button>
+            <div class="nav-links" id="site-links">
+                <a href="#services">Services</a>
+                <a href="#work">Work</a>
+                <a href="#process">Process</a>
+                <a href="#ai-workflow">AI workflow</a>
+                <a href="#about">About</a>
+                <a class="btn btn-ghost nav-contact" href="#contact">Work with me</a>
             </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
-                <li><a href="#work-experience" onclick="toggleMenu()">Work</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </nav>
+    </header>
+    <main id="main">
+        <section id="profile" class="hero shell" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="section-label">Abdul Sami Sultan · Rome, Italy</p>
+                <h1 id="hero-title">Senior iOS <em>engineer.</em></h1>
+                <p class="hero-description">I build native apps across Apple platforms, from VPN and cybersecurity products to enterprise and consumer apps.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#contact">Discuss a project</a>
+                    <a class="btn btn-ghost" href="#work">See selected work</a>
+                    <a class="text-link" href="mailto:abdulsami.sultan.ask@gmail.com?subject=R%C3%A9sum%C3%A9%20request">Request résumé</a>
+                </div>
+                <p class="hero-projects"><strong>Featured work</strong> <a href="#connect-by-vl">Connect by ValueLink</a> <a href="#purevpn-case">PureVPN for iOS and macOS</a></p>
+                <ul class="hero-socials" aria-label="Find me online">
+                    <li><a href="https://www.linkedin.com/in/abdulsami-sultan/">LinkedIn</a></li>
+                    <li><a href="https://github.com/abdulsami-sultan">GitHub</a></li>
+                    <li><a href="https://medium.com/@abdulsami923">Medium</a></li>
+                </ul>
             </div>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <section id="profile">
-        <div class="profile-pic-wrapper">
-            <div class="profile-pic-ring">
-                <img src="./Portrait/Abdul_Sami_Sultan.jpeg" alt="Abdul Sami Sultan" class="profile-pic">
-            </div>
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I'm</p>
-            <h1 class="title">Abdul Sami Sultan</h1>
-            <p class="section__text__p2">Senior iOS Engineer</p>
-            <div class="profile-tagline">
-                <span class="tag">Swift</span>
-                <span class="tag">SwiftUI</span>
-                <span class="tag">UIKit</span>
-                <span class="tag">MVVM</span>
-                <span class="tag">VPN &amp; Security</span>
-            </div>
-            <div class="btn-container">
-                <button class="btn btn-primary" onclick="window.open('./Resume/Abdul_Sami_Sultan_Resume.pdf')">Download Resume</button>
-                <button class="btn btn-ghost" onclick="location.href='./#contact'">Contact Info</button>
-            </div>
-            <div id="socials-container">
-                <img src="./assets/linkedin.png" alt="LinkedIn" class="icon social-icon" onclick="location.href='https://www.linkedin.com/in/abdulsami-sultan/'">
-                <img src="./assets/github.png" alt="GitHub" class="icon social-icon" onclick="location.href='https://github.com/abdulsami-sultan'">
-                <img src="./assets/medium.png" alt="Medium" class="icon social-icon" onclick="location.href='https://medium.com/@abdulsami923'">
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-        <p class="section-label">Get To Know More</p>
-        <h1 class="title">About Me</h1>
-        <div class="section-container">
-            <div class="about-pic-wrapper">
-                <img src="./Portrait/AboutMe.png" alt="About Me" class="about-pic">
-            </div>
-            <div class="about-details-container">
-                <div class="about-containers">
-                    <div class="details-container">
-                        <img src="./assets/experience.png" alt="Experience" class="icon stat-icon">
-                        <h3>Experience</h3>
-                        <p>5+ Years<br>Senior iOS Engineer</p>
-                    </div>
-                    <div class="details-container">
-                        <img src="./assets/education.png" alt="Education" class="icon stat-icon">
-                        <h3>Education</h3>
-                        <p>BSc CS · DHA Suffa University<br><br>MSc CS · IBA Karachi<br>CGPA 3.2</p>
+            <div class="app-console" aria-label="Interactive project preview">
+                <div class="console-sidebar">
+                    <figure class="hero-portrait">
+                        <img src="Portrait/Abdul_Sami_Sultan.jpeg" width="400" height="400" alt="Abdul Sami Sultan">
+                    </figure>
+                    <div class="app-selector" role="group" aria-label="Choose an app" hidden>
+                        <button type="button" aria-pressed="true" data-app-image="assets/OysterVPN/OysterVPN%20-%20Dashboard%20connected.jpeg" data-app-target="#oystervpn">OysterVPN</button>
+                        <button type="button" aria-pressed="false" data-app-image="assets/AbbApp%20Quiz%20Game/AbbApp%20Quiz%20Game%20-%20Dashboard.jpeg" data-app-target="#abb-quiz">ABB Quiz</button>
+                        <button type="button" aria-pressed="false" data-app-image="assets/Saasta%20Tareen/Saasta%20Tareen%20-%20Dashboard.jpeg" data-app-target="#sasta-tareen">Sasta Tareen</button>
+                        <button type="button" aria-pressed="false" data-app-image="assets/Taleemabad/Taleemabad%20-%20grade%20selection.jpeg" data-app-target="#case-study">Taleemabad</button>
                     </div>
                 </div>
-                <div class="text-container">
-                    <p>5+ years building high-impact iOS apps used by millions — from VPN &amp; cybersecurity platforms to consumer apps. At SpurSol I lead mobile development and architect scalable solutions. Previously at Disrupt.com (Gaditek), I worked on IvacyVPN and PureVPN — enterprise VPN products with 6,500+ servers across 71+ countries.</p>
-                </div>
-            </div>
-        </div>
-        <img src="./assets/down_arrow.png" alt="Scroll down" class="icon arrow" onclick="location.href='./#experience'">
-    </section>
-
-    <!-- SKILLS -->
-    <section id="experience">
-        <p class="section-label">Explore My</p>
-        <h1 class="title">Skills</h1>
-        <div class="skills-grid">
-            <div class="skills-card">
-                <h2 class="skills-category">iOS Development</h2>
-                <div class="skill-chips">
-                    <div class="skill-chip"><span class="chip-name">Swift</span><span class="chip-level expert">Expert</span></div>
-                    <div class="skill-chip"><span class="chip-name">SwiftUI</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">UIKit</span><span class="chip-level expert">Expert</span></div>
-                    <div class="skill-chip"><span class="chip-name">MVVM</span><span class="chip-level expert">Expert</span></div>
-                    <div class="skill-chip"><span class="chip-name">Combine</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">Network Extension</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">XCTest</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">Auto Layout</span><span class="chip-level expert">Expert</span></div>
-                </div>
-            </div>
-            <div class="skills-card">
-                <h2 class="skills-category">Tools &amp; Infrastructure</h2>
-                <div class="skill-chips">
-                    <div class="skill-chip"><span class="chip-name">CI/CD</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">Firebase</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">REST API</span><span class="chip-level expert">Expert</span></div>
-                    <div class="skill-chip"><span class="chip-name">AtomSDK</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">Git</span><span class="chip-level expert">Expert</span></div>
-                    <div class="skill-chip"><span class="chip-name">App Store Connect</span><span class="chip-level experienced">Experienced</span></div>
-                    <div class="skill-chip"><span class="chip-name">Xcode &amp; Instruments</span><span class="chip-level expert">Expert</span></div>
-                    <div class="skill-chip"><span class="chip-name">Agile / Scrum</span><span class="chip-level experienced">Experienced</span></div>
-                </div>
-            </div>
-        </div>
-        <img src="./assets/down_arrow.png" alt="Scroll down" class="icon arrow" onclick="location.href='./#work-experience'">
-    </section>
-
-    <!-- WORK EXPERIENCE -->
-    <section id="work-experience">
-        <p class="section-label">My Career</p>
-        <h1 class="title">Work Experience</h1>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h2 class="job-title">Senior Software Engineer</h2>
-                    <p class="job-company">SpurSol &middot; Full-time</p>
-                    <p class="job-date">Jul 2025 &ndash; Present &middot; Karachi, On-site</p>
-                    <ul class="job-bullets">
-                        <li>Led mobile development team, driving innovation and efficiency in project execution.</li>
-                        <li>Implemented CI/CD pipeline to automate deployment, significantly enhancing productivity.</li>
-                        <li>Leveraged AI tooling (Claude Code) to accelerate the development cycle.</li>
-                        <li>Contributed to SpurSol's growth as a startup delivering cutting-edge software solutions.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h2 class="job-title">Senior Software Engineer &mdash; iOS</h2>
-                    <p class="job-company">Disrupt.com (Gaditek) &middot; Full-time</p>
-                    <p class="job-date">Jan 2024 &ndash; Jun 2025 &middot; 1 yr 6 mos &middot; Karachi, On-site</p>
-                    <ul class="job-bullets">
-                        <li>Designed, built and shipped features for IvacyVPN on iOS and macOS platforms.</li>
-                        <li>Collaborated with Product team to ideate and implement innovative features.</li>
-                        <li>Developed comprehensive unit test coverage for reliability and edge cases.</li>
-                        <li>Enforced Clean Code Practices and Swift Style Guidelines.</li>
-                        <li><em>Stack: AtomSDK &middot; Network Extension &middot; Auto Layout &middot; MVVM</em></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h2 class="job-title">Software Engineer &mdash; iOS</h2>
-                    <p class="job-company">PureSquare / Disrupt.com (Gaditek) &middot; Full-time</p>
-                    <p class="job-date">Sep 2022 &ndash; Apr 2024 &middot; 1 yr 8 mos &middot; Karachi, On-site</p>
-                    <ul class="job-bullets">
-                        <li>Owned iOS feature delivery for PureVPN &mdash; 6,500+ servers across 71+ countries.</li>
-                        <li>Built and fixed app features within the Cyber Security department at PureSquare.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h2 class="job-title">iOS Developer</h2>
-                    <p class="job-company">Salsoft Technologies &middot; Full-time</p>
-                    <p class="job-date">Feb 2022 &ndash; Aug 2022 &middot; 7 mos &middot; Karachi</p>
-                    <ul class="job-bullets">
-                        <li>Built OysterVPN for iOS and macOS using Apple Network Extension.</li>
-                        <li>Integrated VPN protocols: IPSec, IKEv2, OpenVPN (TCP/UDP).</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h2 class="job-title">iOS Developer</h2>
-                    <p class="job-company">Novatex Limited &middot; Full-time</p>
-                    <p class="job-date">Aug 2021 &ndash; Jan 2022 &middot; 6 mos &middot; Karachi, On-site</p>
-                    <ul class="job-bullets">
-                        <li>Maintained Sasta Tareen &mdash; Pakistan's first price-comparison grocery app (18,000+ products).</li>
-                        <li>Implemented new features with Swift and UIKit, improving stability and UX.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <h2 class="job-title">iOS Developer &mdash; Intern</h2>
-                    <p class="job-company">Orenda Project &middot; Part-time, Remote</p>
-                    <p class="job-date">Jan 2021 &ndash; Jul 2021 &middot; 7 mos</p>
-                    <ul class="job-bullets">
-                        <li>Contributed to Taleemabad Learning App, a native iOS e-learning platform.</li>
-                        <li>Applied Swift best practices and refactored for readability and maintainability.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <img src="./assets/down_arrow.png" alt="Scroll down" class="icon arrow" onclick="location.href='./#projects'">
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-        <p class="section-label">Browse My Recent</p>
-        <h1 class="title">Projects</h1>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="./assets/project1.png" alt="ABB Quiz App" class="project-img">
-                <div class="project-info">
-                    <h2 class="project-name">ABB Quiz App</h2>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Swift</span>
-                        <span class="tech-tag">UIKit</span>
-                        <span class="tech-tag">Firebase</span>
+                <div class="console-preview">
+                    <div class="console-phone">
+                        <img id="console-screen" src="assets/OysterVPN/OysterVPN%20-%20Dashboard%20connected.jpeg" width="900" height="1600" alt="OysterVPN app screenshot">
                     </div>
-                    <button class="btn btn-primary project-btn" onclick="location.href='https://apps.apple.com/us/app/abb-quiz-app/id1538281636'">App Store</button>
+                    <a class="text-link" id="console-link" href="#oystervpn" aria-live="polite">Explore OysterVPN</a>
+                    <button class="accent-toggle" type="button" aria-pressed="false" hidden>Warm accent</button>
                 </div>
             </div>
-            <div class="project-card">
-                <img src="./assets/project2.png" alt="OysterVPN" class="project-img">
-                <div class="project-info">
-                    <h2 class="project-name">OysterVPN</h2>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Swift</span>
-                        <span class="tech-tag">NetworkExtension</span>
-                        <span class="tech-tag">MVVM</span>
-                    </div>
-                    <button class="btn btn-primary project-btn" onclick="location.href='https://apps.apple.com/ca/app/oystervpn-secure-and-fast-vpn/id1639558080'">App Store</button>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="./assets/project3.png" alt="Sanatkar" class="project-img">
-                <div class="project-info">
-                    <h2 class="project-name">Sanatkar</h2>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Swift</span>
-                        <span class="tech-tag">UIKit</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="./assets/project5.png" alt="Social Media App" class="project-img">
-                <div class="project-info">
-                    <h2 class="project-name">Social Media App</h2>
-                    <div class="tech-tags">
-                        <span class="tech-tag">React Native</span>
-                        <span class="tech-tag">Firebase</span>
-                    </div>
-                    <button class="btn btn-ghost project-btn" onclick="location.href='https://github.com/AbdulSami-Sultan/Social-Media-App'">GitHub</button>
-                </div>
-            </div>
-        </div>
-        <img src="./assets/down_arrow.png" alt="Scroll down" class="icon arrow" onclick="location.href='./#contact'">
-    </section>
+        </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-        <p class="section-label">Get In Touch</p>
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-card">
-            <div class="contact-row">
-                <img src="./assets/email.png" alt="Email" class="icon contact-icon">
-                <a href="mailto:abdulsami923@gmail.com">abdulsami923@gmail.com</a>
+        <section class="proof-band" aria-labelledby="team-title">
+            <div class="shell">
+                <h2 class="section-label" id="team-title">Teams I’ve worked with</h2>
+                <ul class="team-list">
+                    <li>SpurSol</li><li>Disrupt.com / PureSquare</li><li>Salsoft</li><li>Novatex</li><li>Orenda</li>
+                </ul>
+                <dl class="proof-facts">
+                    <div><dt>5+ years</dt><dd>Native Apple-platform engineering</dd></div>
+                    <div><dt><a href="#connect-by-vl">Connect by ValueLink</a></dt><dd>iOS delivery and Azure DevOps CI/CD</dd></div>
+                    <div><dt><a href="#purevpn-case">PureVPN</a></dt><dd>Connection reliability and macOS security</dd></div>
+                </dl>
             </div>
-            <div class="contact-divider"></div>
-            <div class="contact-row">
-                <img src="./assets/linkedin.png" alt="LinkedIn" class="icon contact-icon">
-                <a href="https://www.linkedin.com/in/abdulsami-sultan/">LinkedIn Profile</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Skills</a></li>
-            <li><a href="#work-experience">Work</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <p>Copyright &copy; 2025 Abdul Sami Sultan. All Rights Reserved.</p>
+        <section class="shell section-body" id="services" aria-labelledby="services-title">
+            <p class="section-label">Services</p>
+            <h2 class="title" id="services-title">Where I can help</h2>
+            <div class="offer-grid">
+                <article class="offer-card">
+                    <h3>Build a native Apple app</h3>
+                    <p>Turn product requirements into Swift interfaces and reusable components for iPhone, iPad, or Mac.</p>
+                    <a class="text-link" href="#contact" data-project="New app">Discuss a new app</a>
+                </article>
+                <article class="offer-card">
+                    <h3>Extend your iOS team</h3>
+                    <p>Take ownership of features, review code, and support release delivery in an existing codebase.</p>
+                    <a class="text-link" href="#contact" data-project="Existing app">Discuss team support</a>
+                </article>
+                <article class="offer-card">
+                    <h3>Improve app reliability</h3>
+                    <p>Investigate regressions, connection failures, and performance issues. Add tests around the fixes.</p>
+                    <a class="text-link" href="#contact" data-project="Reliability and performance">Discuss reliability work</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="shell section-body work-index" id="work" aria-labelledby="work-title">
+            <p class="section-label">Selected work</p>
+            <h2 class="title" id="work-title">Apps and features I helped ship</h2>
+            <nav class="work-nav" aria-label="Jump to a project">
+                <a href="#connect-by-vl">Connect by ValueLink</a>
+                <a href="#purevpn-case">PureVPN</a>
+                <a href="#oystervpn">OysterVPN</a>
+                <a href="#sasta-tareen">Sasta Tareen</a>
+                <a href="#abb-quiz">ABB Quiz App</a>
+                <a href="#case-study">Taleemabad</a>
+                <a href="#usa-wholesale">USA Wholesale</a>
+            </nav>
+            <div class="case-list">
+                <article class="case-card featured-case" id="connect-by-vl" aria-labelledby="connect-by-vl-title">
+                    <div class="case-overview">
+                        <p class="section-label">Enterprise iOS · SpurSol</p>
+                        <h3 id="connect-by-vl-title">Connect by ValueLink</h3>
+                        <p class="case-summary">An iPhone app for real estate appraisal teams to manage orders and coordinate with lenders and appraisal management companies. At SpurSol I led iOS development and technical delivery.</p>
+                        <p class="case-stack">iOS · Swift · Azure DevOps CI/CD</p>
+                        <a class="btn btn-ghost" href="https://apps.apple.com/us/app/connect-by-valuelink/id1314908095">View Connect on the App Store</a>
+                    </div>
+                    <dl class="case-details">
+                        <div><dt>Feature delivery</dt><dd>Led implementation and ongoing maintenance of the Swift app, with an emphasis on maintainable changes.</dd></div>
+                        <div><dt>Code quality</dt><dd>Reviewed changes with the mobile team and addressed stability and performance issues.</dd></div>
+                        <div><dt>Release engineering</dt><dd>Managed Azure DevOps pipelines for automated builds, integration, and delivery.</dd></div>
+                    </dl>
+                </article>
+                <article class="case-card featured-case" id="purevpn-case" aria-labelledby="purevpn-case-title">
+                    <div class="case-overview">
+                        <p class="section-label">Cybersecurity · Gaditek / PureSquare</p>
+                        <h3 id="purevpn-case-title">PureVPN</h3>
+                        <p class="case-summary">At Gaditek I worked on the PureVPN iOS and native macOS apps. My work covered connection reliability, app stability, and a dark web security feature for macOS.</p>
+                        <p class="case-stack">Swift · iOS · macOS · Unit testing</p>
+                        <div class="case-actions">
+                            <a class="btn btn-ghost" href="https://apps.apple.com/us/app/purevpn-secure-private-vpn/id594506418">iOS App Store</a>
+                            <a class="btn btn-ghost" href="https://www.purevpn.com/download/mac-vpn">Native macOS download</a>
+                        </div>
+                    </div>
+                    <dl class="case-details">
+                        <div><dt>Connection reliability</dt><dd>Diagnosed application defects and improved VPN connection behavior and overall stability.</dd></div>
+                        <div><dt>macOS security</dt><dd>Designed and implemented a dark web security feature for the macOS app.</dd></div>
+                        <div><dt>Regression prevention</dt><dd>Used unit tests and maintainable Swift patterns to reduce regression risk during ongoing development.</dd></div>
+                    </dl>
+                </article>
+                <article class="case-card" id="oystervpn" aria-labelledby="oystervpn-title">
+                    <div class="case-overview">
+                        <p class="section-label">VPN client · Salsoft Technologies</p>
+                        <h3 id="oystervpn-title">OysterVPN</h3>
+                        <p class="case-summary">I worked on native VPN interfaces and reusable connectivity modules for Apple platforms.</p>
+                        <p class="case-stack">Swift · MVVM · Apple Network Extension</p>
+                        <a class="btn btn-ghost" href="https://apps.apple.com/ca/app/oystervpn-secure-and-fast-vpn/id1639558080">View OysterVPN on the App Store</a>
+                    </div>
+                    <dl class="case-details">
+                        <div><dt>Native interfaces</dt><dd>Built Swift screens using MVVM for connection controls, locations, and VPN settings.</dd></div>
+                        <div><dt>Protocol support</dt><dd>Developed reusable Network Extension components supporting IKEv2, IPsec, and OpenVPN.</dd></div>
+                        <div><dt>Maintainability</dt><dd>Applied SOLID principles and test-driven development to keep networking code easier to extend.</dd></div>
+                    </dl>
+                    <div class="screen-grid">
+                        <figure>
+                            <a href="assets/OysterVPN/OysterVPN%20-%20Dashboard%20connected.jpeg"><img src="assets/OysterVPN/OysterVPN%20-%20Dashboard%20connected.jpeg" alt="Connected dashboard" loading="lazy"></a>
+                            <figcaption>Connected dashboard</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/OysterVPN/OysterVPN%20-%20All%20Location.jpeg"><img src="assets/OysterVPN/OysterVPN%20-%20All%20Location.jpeg" alt="Server locations" loading="lazy"></a>
+                            <figcaption>Server locations</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/OysterVPN/OysterVPN%20-%20VPN%20Protocol%20Selection.jpeg"><img src="assets/OysterVPN/OysterVPN%20-%20VPN%20Protocol%20Selection.jpeg" alt="Protocol selection" loading="lazy"></a>
+                            <figcaption>Protocol selection</figcaption>
+                        </figure>
+                    </div>
+                </article>
+                <article class="case-card" id="sasta-tareen" aria-labelledby="sasta-tareen-title">
+                    <div class="case-overview">
+                        <p class="section-label">Grocery comparison · Novatex Limited</p>
+                        <h3 id="sasta-tareen-title">Sasta Tareen</h3>
+                        <p class="case-summary">A shopping app that lets users find groceries, compare prices, and assemble a cart. I worked on maintaining the native iOS app.</p>
+                        <p class="case-stack">Swift · Auto Layout · Performance debugging</p>
+                        <a class="btn btn-ghost" href="https://apps.apple.com/in/app/sasta-tareen/id6457362264">View Sasta Tareen on the App Store</a>
+                    </div>
+                    <dl class="case-details">
+                        <div><dt>Shopping flow</dt><dd>The app connects product browsing and search with a price comparison chart and shopping cart.</dd></div>
+                        <div><dt>Performance</dt><dd>Investigated application issues through debugging and code optimization.</dd></div>
+                        <div><dt>Responsive layouts</dt><dd>Used Auto Layout to improve how screens adapt across supported Apple devices.</dd></div>
+                    </dl>
+                    <div class="screen-grid">
+                        <figure>
+                            <a href="assets/Saasta%20Tareen/Saasta%20Tareen%20-%20Dashboard.jpeg"><img src="assets/Saasta%20Tareen/Saasta%20Tareen%20-%20Dashboard.jpeg" alt="Shopping dashboard" loading="lazy"></a>
+                            <figcaption>Shopping dashboard</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/Saasta%20Tareen/Saasta%20Tareen%20-%20Item%20Comparing%20Chart.jpeg"><img src="assets/Saasta%20Tareen/Saasta%20Tareen%20-%20Item%20Comparing%20Chart.jpeg" alt="Price comparison chart" loading="lazy"></a>
+                            <figcaption>Price comparison chart</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/Saasta%20Tareen/Saasta%20Tareen%20-%20Shopping%20Cart.jpeg"><img src="assets/Saasta%20Tareen/Saasta%20Tareen%20-%20Shopping%20Cart.jpeg" alt="Shopping cart" loading="lazy"></a>
+                            <figcaption>Shopping cart</figcaption>
+                        </figure>
+                    </div>
+                </article>
+                <article class="case-card" id="abb-quiz" aria-labelledby="abb-quiz-title">
+                    <div class="case-overview">
+                        <p class="section-label">Multiplayer quiz game</p>
+                        <h3 id="abb-quiz-title">ABB Quiz App</h3>
+                        <p class="case-summary">A Swift quiz app that brings together level selection, multiple-choice rounds, multiplayer play, and a real-time leaderboard.</p>
+                        <p class="case-stack">Swift · UIKit · Firebase</p>
+                        <a class="btn btn-ghost" href="https://apps.apple.com/us/app/abb-quiz-app/id1538281636">View ABB Quiz App on the App Store</a>
+                    </div>
+                    <dl class="case-details">
+                        <div><dt>Solo play</dt><dd>The level picker organizes the available rounds. During a round, players answer multiple-choice questions.</dd></div>
+                        <div><dt>Multiplayer</dt><dd>A separate multiplayer menu gives players an entry point to compete, with leaderboard standings for comparison.</dd></div>
+                    </dl>
+                    <div class="screen-grid">
+                        <figure>
+                            <a href="assets/AbbApp%20Quiz%20Game/AbbApp%20Quiz%20Game%20-%20Level%20Screen.jpeg"><img src="assets/AbbApp%20Quiz%20Game/AbbApp%20Quiz%20Game%20-%20Level%20Screen.jpeg" alt="Level selection" loading="lazy"></a>
+                            <figcaption>Level selection</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/AbbApp%20Quiz%20Game/AbbApp%20Quiz%20Game%20-%20Game%20play%201.jpeg"><img src="assets/AbbApp%20Quiz%20Game/AbbApp%20Quiz%20Game%20-%20Game%20play%201.jpeg" alt="Multiple-choice gameplay" loading="lazy"></a>
+                            <figcaption>Multiple-choice gameplay</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/AbbApp%20Quiz%20Game/AbbApp%20Quiz%20Game%20-%20Multiplayer%20Menu.jpeg"><img src="assets/AbbApp%20Quiz%20Game/AbbApp%20Quiz%20Game%20-%20Multiplayer%20Menu.jpeg" alt="Multiplayer menu" loading="lazy"></a>
+                            <figcaption>Multiplayer menu</figcaption>
+                        </figure>
+                    </div>
+                </article>
+                <article class="case-card" id="case-study" aria-labelledby="case-study-title">
+                    <div class="case-overview">
+                        <p class="section-label">Education · Orenda</p>
+                        <h3 id="case-study-title">Taleemabad</h3>
+                        <p class="case-summary">A native iOS learning app for students in Grades 1–5. I contributed to development and maintenance during my internship.</p>
+                        <p class="case-stack">Swift · Auto Layout · Code review</p>
+                        <a class="btn btn-ghost" href="https://apps.apple.com/pk/app/taleemabad-learning-app/id1573435969">View Taleemabad on the App Store</a>
+                    </div>
+                    <dl class="case-details">
+                        <div><dt>Learning flow</dt><dd>Students choose their grade and subject, watch video lessons, and check their understanding with quizzes and scores.</dd></div>
+                        <div><dt>My contribution</dt><dd>I helped review and debug code, refactored Swift for readability, and worked on adaptive interfaces using Auto Layout.</dd></div>
+                    </dl>
+                    <div class="screen-grid" id="app-screens">
+                        <figure>
+                            <a href="assets/Taleemabad/Taleemabad%20-%20dashboard.jpeg"><img src="assets/Taleemabad/Taleemabad%20-%20dashboard.jpeg" alt="Subject dashboard" loading="lazy"></a>
+                            <figcaption>Subject dashboard</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/Taleemabad/Taleemabad%20-%20math%20video%20section.jpeg"><img src="assets/Taleemabad/Taleemabad%20-%20math%20video%20section.jpeg" alt="Math video lessons" loading="lazy"></a>
+                            <figcaption>Math video lessons</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/Taleemabad/Taleemabad%20-%20level%203%20mcqs%20result.jpeg"><img src="assets/Taleemabad/Taleemabad%20-%20level%203%20mcqs%20result.jpeg" alt="Quiz results" loading="lazy"></a>
+                            <figcaption>Quiz results</figcaption>
+                        </figure>
+                    </div>
+                </article>
+                <article class="case-card" id="usa-wholesale" aria-labelledby="usa-wholesale-title">
+                    <div class="case-overview">
+                        <p class="section-label">B2B commerce</p>
+                        <h3 id="usa-wholesale-title">USA Wholesale</h3>
+                        <p class="case-summary">An ordering and inventory app for approved wholesale customers on iPhone and iPad.</p>
+                        <a class="btn btn-ghost" href="https://apps.apple.com/us/app/usa-wholesale/id1189929519">View USA Wholesale on the App Store</a>
+                    </div>
+                    <dl class="case-details">
+                        <div><dt>Catalog</dt><dd>Browse product categories and featured stock or search for a particular item.</dd></div>
+                        <div><dt>Ordering and inventory</dt><dd>Look up products by item number or barcode, add items to an order, and manage inventory.</dd></div>
+                    </dl>
+                    <div class="screen-grid wholesale-screens">
+                        <figure>
+                            <a href="assets/USA%20Wholesome/USA%20Wholesome%20-%20featured%20items.png"><img src="assets/USA%20Wholesome/USA%20Wholesome%20-%20featured%20items.png" width="460" height="995" alt="USA Wholesale · Featured items" loading="lazy"></a>
+                            <figcaption>Featured items</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/USA%20Wholesome/USA%20Wholesome%20-%20category.png"><img src="assets/USA%20Wholesome/USA%20Wholesome%20-%20category.png" width="460" height="995" alt="USA Wholesale · Browse categories" loading="lazy"></a>
+                            <figcaption>Browse categories</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/USA%20Wholesome/USA%20Wholesome%20-%20searching%20items.png"><img src="assets/USA%20Wholesome/USA%20Wholesome%20-%20searching%20items.png" width="460" height="995" alt="USA Wholesale · Search the catalog" loading="lazy"></a>
+                            <figcaption>Search the catalog</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/USA%20Wholesome/USA%20Wholesome-%20item.png"><img src="assets/USA%20Wholesome/USA%20Wholesome-%20item.png" width="460" height="995" alt="USA Wholesale product details and related items" loading="lazy"></a>
+                            <figcaption>Inspect a product</figcaption>
+                        </figure>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="shell section-body" id="projects">
+            <p class="section-label">Additional projects</p>
+            <h2 class="title">More projects</h2>
+            <div class="projects-grid">
+                <div class="project-card" id="sanatkar">
+                    <img src="assets/Project%20Catalog/project3.png" alt="Sanatkar" class="project-img" loading="lazy">
+                    <div class="project-info">
+                        <h3 class="project-name">Sanatkar</h3>
+                        <p class="project-description">An artisan marketplace app for iOS, built using Swift and UIKit.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Swift</span>
+                            <span class="tech-tag">UIKit</span>
+                        </div>
+                        <a class="btn btn-primary project-btn" href="https://apps.apple.com/us/app/sanatkar/id1527036667">App Store</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/Project%20Catalog/project5.png" alt="Social Media App" class="project-img" loading="lazy">
+                    <div class="project-info">
+                        <h3 class="project-name">Social Media App</h3>
+                        <p class="project-description">A cross-platform social app project using React Native and Firebase. The source is available on GitHub.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                        <a class="btn btn-ghost project-btn" href="https://github.com/AbdulSami-Sultan/Social-Media-App">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="shell section-body" id="process" aria-labelledby="process-title">
+            <p class="section-label">Process</p>
+            <h2 class="title" id="process-title">From scope to release</h2>
+            <ol class="process-list">
+                <li><strong>Define the problem</strong><span>Agree on the target users, platforms, constraints, and what a successful release means.</span></li>
+                <li><strong>Plan the work</strong><span>Break the scope into reviewable milestones and flag dependencies early.</span></li>
+                <li><strong>Build and validate</strong><span>Share test builds, review changes, and use automated checks to catch regressions.</span></li>
+                <li><strong>Prepare the handoff</strong><span>Document build and release steps so your team can pick up the work.</span></li>
+            </ol>
+        </section>
+
+        <section class="workflow-band" id="ai-workflow" aria-labelledby="ai-title">
+            <div class="shell section-body">
+                <p class="section-label">AI workflow</p>
+                <h2 class="title" id="ai-title">How I use Claude Code</h2>
+                <p class="section-intro">At SpurSol I used Claude Code to assist feature development. I use it to explore implementation options and draft focused changes, with code review and testing as part of delivery.</p>
+                <div class="offer-grid">
+                    <article class="offer-card"><h3>Set constraints</h3><p>Document the platform requirements, architecture, and scope before asking for a change.</p></article>
+                    <article class="offer-card"><h3>Review the diff</h3><p>Check behavior, edge cases, and how the change fits the existing codebase.</p></article>
+                    <article class="offer-card"><h3>Run the checks</h3><p>Use tests and CI to verify the behavior that matters before release.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="shell section-body" id="about">
+            <p class="section-label">Get To Know More</p>
+            <h2 class="title">About Me</h2>
+            <div class="about-containers">
+                <div class="details-container">
+                    <img src="assets/icons/experience.png" alt="Experience" class="icon stat-icon">
+                    <h3>Experience</h3>
+                    <p>5+ Years<br>Senior iOS Engineer</p>
+                </div>
+                <div class="details-container">
+                    <img src="assets/icons/education.png" alt="Education" class="icon stat-icon">
+                    <h3>Education</h3>
+                    <p>ICT and Internet Engineering · University of Rome Tor Vergata · In progress<br><br>BSc Computer Science · DHA Suffa University</p>
+                </div>
+            </div>
+            <div class="text-container">
+                <p>I’m a Senior iOS Software Engineer with 5+ years of experience building and maintaining native Apple-platform apps. At SpurSol I led iOS development for Connect by ValueLink. At Disrupt.com and PureSquare I worked on the PureVPN iOS and macOS apps, including connection reliability and a macOS security feature. I’m now based in Rome and studying ICT and Internet Engineering at Tor Vergata.</p>
+            </div>
+            <div class="about-links">
+                <a class="btn btn-primary" href="mailto:abdulsami.sultan.ask@gmail.com?subject=R%C3%A9sum%C3%A9%20request">Request résumé</a>
+                <a class="text-link" href="https://github.com/abdulsami-sultan">GitHub</a>
+                <a class="text-link" href="https://medium.com/@abdulsami923">Medium</a>
+            </div>
+        </section>
+
+        <section class="shell section-body" id="experience">
+            <p class="section-label">Explore My</p>
+            <h2 class="title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skills-card">
+                    <h3 class="skills-category">iOS Development</h3>
+                    <div class="skill-chips">
+                        <div class="skill-chip"><span class="chip-name">Swift</span><span class="chip-level expert">Expert</span></div>
+                        <div class="skill-chip"><span class="chip-name">SwiftUI</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">UIKit</span><span class="chip-level expert">Expert</span></div>
+                        <div class="skill-chip"><span class="chip-name">MVVM</span><span class="chip-level expert">Expert</span></div>
+                        <div class="skill-chip"><span class="chip-name">Combine</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">Network Extension</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">XCTest</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">Auto Layout</span><span class="chip-level expert">Expert</span></div>
+                    </div>
+                </div>
+                <div class="skills-card">
+                    <h3 class="skills-category">Tools &amp; Infrastructure</h3>
+                    <div class="skill-chips">
+                        <div class="skill-chip"><span class="chip-name">CI/CD</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">Firebase</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">REST API</span><span class="chip-level expert">Expert</span></div>
+                        <div class="skill-chip"><span class="chip-name">AtomSDK</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">Git</span><span class="chip-level expert">Expert</span></div>
+                        <div class="skill-chip"><span class="chip-name">App Store Connect</span><span class="chip-level experienced">Experienced</span></div>
+                        <div class="skill-chip"><span class="chip-name">Xcode &amp; Instruments</span><span class="chip-level expert">Expert</span></div>
+                        <div class="skill-chip"><span class="chip-name">Agile / Scrum</span><span class="chip-level experienced">Experienced</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="shell section-body" id="work-experience">
+            <p class="section-label">My Career</p>
+            <h2 class="title">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item" id="spursol">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3 class="job-title">Senior Software Engineer, iOS</h3>
+                        <p class="job-company">SpurSol</p>
+                        <p class="job-date">Jul 2025 – Sep 2026 · Karachi</p>
+                        <ul class="job-bullets">
+                            <li>Led iOS development and technical delivery for Connect by ValueLink, an appraisal management app for iPhone.</li>
+                            <li>Maintained Swift applications, reviewed code, and managed Azure DevOps CI/CD pipelines.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" id="purevpn">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3 class="job-title">Senior Software Engineer, iOS</h3>
+                        <p class="job-company">Disrupt.com (Gaditek) / PureSquare</p>
+                        <p class="job-date">Sep 2022 – Jun 2025 · Karachi</p>
+                        <ul class="job-bullets">
+                            <li>Developed and maintained the PureVPN iOS and macOS apps, improving connection reliability and app stability.</li>
+                            <li>Implemented a dark web security feature for macOS and used unit tests to reduce regressions.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3 class="job-title">Software Engineer, iOS</h3>
+                        <p class="job-company">Salsoft Technologies</p>
+                        <p class="job-date">Feb 2022 – Aug 2022 · Karachi</p>
+                        <ul class="job-bullets">
+                            <li>Built native iOS interfaces and reusable Network Extension modules supporting IKEv2, IPsec, and OpenVPN.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3 class="job-title">iOS Developer</h3>
+                        <p class="job-company">Novatex Limited</p>
+                        <p class="job-date">Aug 2021 – Jan 2022 · Karachi</p>
+                        <ul class="job-bullets">
+                            <li>Helped maintain Sasta Tareen and improved app performance and responsive layouts.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3 class="job-title">iOS Developer Intern</h3>
+                        <p class="job-company">Orenda</p>
+                        <p class="job-date">Oct 2020 – Jul 2021 · Islamabad</p>
+                        <ul class="job-bullets">
+                            <li>Contributed to Taleemabad through native app development, code reviews, debugging, and Auto Layout.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h3 class="highlights-title">Career highlights</h3>
+            <div class="highlights-grid">
+                <figure>
+                    <a href="Portrait/Gaditek%20-%20Promotion%20%28Software%20Engineer%20to%20Senior%20Software%20Engineer.JPG"><img src="Portrait/Gaditek%20-%20Promotion%20%28Software%20Engineer%20to%20Senior%20Software%20Engineer.JPG" alt="Promotion to Senior Software Engineer at Gaditek" loading="lazy"></a>
+                    <figcaption>Promotion to Senior Software Engineer at Gaditek</figcaption>
+                </figure>
+                <figure>
+                    <a href="Portrait/Gaditek%20Team%20Group%20Photo.JPG"><img src="Portrait/Gaditek%20Team%20Group%20Photo.JPG" alt="With the Gaditek team" loading="lazy"></a>
+                    <figcaption>With the Gaditek team</figcaption>
+                </figure>
+                <figure>
+                    <a href="Portrait/Spursol%20Leaving%20Final%20Day%20Photo.PNG"><img src="Portrait/Spursol%20Leaving%20Final%20Day%20Photo.PNG" alt="My last day at SpurSol" loading="lazy"></a>
+                    <figcaption>My last day at SpurSol</figcaption>
+                </figure>
+                <figure>
+                    <a href="Portrait/Reply%20-%20Student%20Clash%20Event%20-%20AI%20on%20Campus.jpeg"><img src="Portrait/Reply%20-%20Student%20Clash%20Event%20-%20AI%20on%20Campus.jpeg" alt="Reply Student Clash · AI on Campus" loading="lazy"></a>
+                    <figcaption>Reply Student Clash · AI on Campus</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="shell section-body" id="writing" aria-labelledby="writing-title">
+            <p class="section-label">Writing</p>
+            <h2 class="title" id="writing-title">Find me on Medium</h2>
+            <a class="text-link" href="https://medium.com/@abdulsami923">Visit my Medium profile</a>
+        </section>
+
+        <section class="shell section-body contact-layout" id="contact" aria-labelledby="contact-title">
+            <div>
+                <p class="section-label">Contact</p>
+                <h2 class="title" id="contact-title">Let’s talk about your app</h2>
+                <p class="section-intro">Tell me what you’re building, where the project stands, and the kind of iOS support you need.</p>
+                <div class="contact-links">
+                    <a class="text-link" href="mailto:abdulsami.sultan.ask@gmail.com">abdulsami.sultan.ask@gmail.com</a>
+                    <a class="text-link" href="https://www.linkedin.com/in/abdulsami-sultan/">LinkedIn</a>
+                </div>
+            </div>
+            <form class="enquiry-form" id="enquiry-form" hidden>
+                <div class="enquiry-grid">
+                    <label>Name <input name="name" autocomplete="name" required></label>
+                    <label>Email <input type="email" name="email" autocomplete="email" required></label>
+                    <label>Company <span>(optional)</span><input name="company" autocomplete="organization"></label>
+                    <label>Project type
+                        <select name="project">
+                            <option>New app</option>
+                            <option>Existing app</option>
+                            <option>Reliability and performance</option>
+                            <option>Other</option>
+                        </select>
+                    </label>
+                    <label>Platform
+                        <select name="platform">
+                            <option>To be discussed</option><option>iPhone / iPad</option><option>macOS</option><option>iOS and macOS</option>
+                        </select>
+                    </label>
+                    <label>Timeline <span>(optional)</span><input name="timeline" placeholder="e.g. next quarter"></label>
+                    <label>Budget <span>(optional)</span><input name="budget" placeholder="Include currency if known"></label>
+                </div>
+                <label>Project details <textarea name="message" rows="5" required></textarea></label>
+                <button class="btn btn-primary" type="submit">Open email draft</button>
+                <p>The form opens a draft in your email app.</p>
+            </form>
+        </section>
+
+    </main>
+    <footer class="site-footer">
+        <div class="shell footer-inner">
+            <a class="brand" href="#top"><span class="monogram" aria-hidden="true">SS</span> Abdul Sami Sultan</a>
+            <nav aria-label="Footer navigation">
+                <a href="#experience">Skills</a>
+                <a href="#work-experience">Work</a>
+                <a href="#contact">Contact</a>
+                <a href="#top">Back to top</a>
+            </nav>
+        </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
